@@ -34,6 +34,11 @@
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.0.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-react": "^7.19.0",
     "html-loader": "^1.1.0",
     "html-webpack-plugin": "^4.3.0",
     "webpack": "^4.43.0",
