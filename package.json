@@ -1,0 +1,34 @@
+{
+  "name": "examedic_front",
+  "version": "1.0.0",
+  "description": "This is the Frontend project",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wise-crab/healtcare_Frontend.git"
+  },
+  "keywords": [
+    "Javascript",
+    "React",
+    "Express",
+    "Redux",
+    "Node"
+  ],
+  "author": "wiseCrab Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wise-crab/healtcare_Frontend/issues"
+  },
+  "homepage": "https://github.com/wise-crab/healtcare_Frontend#readme",
+  "dependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-react": "^7.9.4",
+    "babel-loader": "^8.1.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
