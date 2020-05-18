@@ -30,6 +30,15 @@ module.exports = {
         use: [
           'sass-loader'
         ]
+      },
+      {
+        test: /\.(png)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: { name: 'assets/[hash].[ext]' },
+          }
+        ]
       }
     ]
   },
