@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../../assets/img/Brand-icon-horizontal.png';
+import '../../assets/styles/sass/views/Login.scss';
 
 const Login = () => (
   <section className='login'>

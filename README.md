@@ -13,7 +13,6 @@ Healthcare Dashboard is a management system of clinical laboratory tests that pr
     @babel/preset-react ()
     babel-loader ()
     react-router-dom (define some routes needed)
-    sass-loader (webpack loader)
 
 ### Dev Dependencies:
     babel-eslint (ECMAScript-6 transpilator to JS easy to browser)
@@ -30,6 +29,9 @@ Healthcare Dashboard is a management system of clinical laboratory tests that pr
     html-loader (webpack loader)
     html-webpack-plugin (webpack plugin)
     file-loader (to render images from code)
+    sass-loader (webpack loader)
+    node-sass (SASS loader does not work witout this )
+    
     
 
 ## Developing questions found
