@@ -1,11 +1,12 @@
 import React from 'react';
+// import logo from '../../assets/img/img/Brand-icon-horizontal.png';
 
 const Login = () => (
   <section className='login'>
       <section className='login__container'>
         <h2>Sign In</h2>
         <div className='login__container--logo'>
-          <img href='' />
+          <img src='/src/assets/img/Brand-icon-horizontal.png' />
         </div>
         <form
           className='login__container--form'

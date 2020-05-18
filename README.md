@@ -1,5 +1,6 @@
 # healthcare_dashboard
 Healthcare Dashboard is a management system of clinical laboratory tests that provides a track of your results.
+
  ## convention
  CSS BEM
  ## Dependencies:
@@ -27,3 +28,9 @@ Healthcare Dashboard is a management system of clinical laboratory tests that pr
     webpack-dev-server ()
     html-loader (webpack loader)
     html-webpack-plugin (webpack plugin)
+    sass-loader (webpack loader)
+    
+
+## Developing questions found
+    Why there is an accepting T&C checkbox?
+    What is the brand-logo we're gonna be using? add it in the assets folder
