@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   entry: './src/index.js',
@@ -9,6 +10,11 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx'],
+  },
+  devServer:{
+    hot: true,
+    open: true,
+    port: 8080,
   },
   module:{
     rules: [
@@ -24,6 +30,21 @@ module.exports = {
         use: {
           loader: 'html-loader',
         }
+      },
+      {
+        test: /\.(s*)css$/,
+        use: [
+          'sass-loader'
+        ]
+      },
+      {
+        test: /\.(png)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: { name: 'assets/[hash].[ext]' },
+          }
+        ]
       }
     ]
   },
@@ -31,6 +52,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './public/index.html',
       filename: './index.html',
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin(),
   ],
 }

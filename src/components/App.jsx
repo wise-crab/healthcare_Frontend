@@ -1,7 +1,11 @@
 import React from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
+import Login from '../views/Login';
 
 const App = () => (
-  <h1>This is the main ExaMedic's Component</h1>
+  <BrowserRouter>
+    <Route exact path='/'component={Login} />
+  </BrowserRouter>
 )
 
 export default App;
