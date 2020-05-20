@@ -1,0 +1,45 @@
+//Colors
+$blue: #3856fe;
+$background-gray: #f4f4f4;
+$light-gray: #e5e5e5;
+$dark-gray: #7f7f7f;
+$black: #3d3d3d;
+$white: #ffffff;
+
+//Fonts
+$font-arial: Arial, sans-serif;
+
+.font-title {
+    @include font-family($font-arial, 700, normal);
+}
+
+.font-sub-title {
+    @include font-family($font-arial, 600, normal);
+}
+
+.font-regular {
+    @include font-family($font-arial, 400, normal);
+}
+
+.font-bold {
+    @include font-family($font-arial, 700, normal);
+}
+
+//Break Points
+$mobile: 479px;
+$tablet: 767px;
+$laptop: 1023px;
+$desktop: 1365px;
+
+//Unities
+$one-u: 16px;
+$half-u: calc(16px * 0.5);
+$one-u-h: calc(16px * 1.5);
+$two-u: calc(16px * 2);
+$two-u-h: calc(16px * 2.5);
+$three-u: calc(16px * 3);
+$three-u-h: calc(16px * 3.5);
+$four-u: calc(16px * 4);
+$four-u-h: calc(16px * 4.5);
+$six-u: calc(16px * 6);
+$six-u-h: calc(16px * 6.5);

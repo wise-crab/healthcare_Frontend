@@ -1,0 +1,94 @@
+//General styles
+* {
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    * {
+        box-sizing: border-box;
+    }
+}
+
+body {
+    width: 100%;
+    max-width: 100%;
+    background: $background-gray;
+    font-size: 1rem;
+    @extend .font-regular;
+    line-height: 1.5;
+    overflow-x: hidden;
+    color: $dark-gray;
+    padding: $one-u;
+}
+
+//Headers
+h1 {
+    color: $black;
+    @extend .font-title;
+    font-size: calc(3.209rem + 1vw);
+    margin-bottom: $one-u;
+}
+
+h2 {
+    color: $black;
+    @extend .font-sub-title;
+    font-size: calc(2.5rem + 1vw);
+    margin-bottom: $one-u;
+}
+
+h3 {
+    font-size: calc(2rem + 1vw);
+}
+
+h4 {
+    font-size: calc(1.6rem + 1vw);
+}
+
+h5 {
+    font-size: calc(1.2rem + 1vw);
+}
+
+h6 {
+    font-size: 1rem;
+}
+
+h3,
+h4,
+h5,
+h6 {
+    color: $black;
+    @extend .font-regular;
+    margin-bottom: $one-u;
+}
+
+//Elements
+input:not([type='checkbox']):not([type='radio']) {
+    height: $two-u-h;
+    padding-left: $half-u;
+    padding-right: $half-u;
+    width: 100%;
+    margin-bottom: $one-u;
+}
+
+label {
+    @extend .font-bold;
+}
+
+.button {
+    height: $two-u-h;
+    width: 100%;
+    background-color: $blue;
+    color: $white;
+    @extend .font-bold;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+.card {
+    width: 100%;
+    padding: $one-u;
+    background-color: $white;
+    border-radius: $half-u;
+    box-shadow: 0rem 4px 6px rgba(0, 0, 0, 0.16);
+}
