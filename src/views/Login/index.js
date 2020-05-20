@@ -6,11 +6,11 @@ const Login = () => (
   <section className='login'>
       <section className='login__container'>
         <h2>Sign In</h2>
-        <div className='login__container--logo'>
+        <div className='login__container-logo'>
           <img src={logo} />
         </div>
         <form
-          className='login__container--form'
+          className='login__container-form'
         >
           <input
             name='email'
@@ -24,7 +24,7 @@ const Login = () => (
             type='password'
             placeholder='Password'
           />
-          <div className='login__container--remember-me'>
+          <div className='login__container-remember-me'>
             <label>
               <input
                 type='checkbox'
