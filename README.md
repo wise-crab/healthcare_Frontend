@@ -1,6 +1,6 @@
 # Run:
-    `npm start`
-    it'll run a server and the app together.
+    npm start
+it'll run a server and the app together.
 
 # healthcare_dashboard
 Healthcare Dashboard is a management system of clinical laboratory tests that provides a track of your results.
