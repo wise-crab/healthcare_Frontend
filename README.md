@@ -1,3 +1,7 @@
+# Run:
+    `npm start`
+    it'll run a server and the app together.
+
 # healthcare_dashboard
 Healthcare Dashboard is a management system of clinical laboratory tests that provides a track of your results.
 
@@ -31,13 +35,12 @@ Healthcare Dashboard is a management system of clinical laboratory tests that pr
     file-loader (to render images from code)
     sass-loader (webpack loader)
     node-sass (SASS loader does not work witout this )
+    json-server (it deploys a fake-server to mock data)
+    npm-run-all (to have everything running in an unique console)
     
     
 
 ## Developing questions found
-    Why there is an accepting T&C checkbox?
-    What is the brand-logo we're gonna be using? add it in the assets folder
-    Getting trouble with styles, I don't wanna do any further because it'd be against the established
 
 
 regex: "id": \{\n\s+("\$oid":.*$)\s*\}
