@@ -38,3 +38,6 @@ Healthcare Dashboard is a management system of clinical laboratory tests that pr
     Why there is an accepting T&C checkbox?
     What is the brand-logo we're gonna be using? add it in the assets folder
     Getting trouble with styles, I don't wanna do any further because it'd be against the established
+
+
+regex: "id": \{\n\s+("\$oid":.*$)\s*\}
