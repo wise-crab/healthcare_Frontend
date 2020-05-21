@@ -17,6 +17,8 @@ Healthcare Dashboard is a management system of clinical laboratory tests that pr
     @babel/preset-react ()
     babel-loader ()
     react-router-dom (define some routes needed)
+    redux (to states management)
+    react-redux (to get the provider, who's provide the whole app)
 
 ### Dev Dependencies:
     babel-eslint (ECMAScript-6 transpilator to JS easy to browser)
