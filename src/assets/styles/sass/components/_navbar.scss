@@ -1,0 +1,12 @@
+@import '../styles.scss';
+
+.navbar {
+  min-width: 100%;
+  height: 70px;
+  padding: 0 $one-u;
+  background-color: $white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid $light-gray;
+}

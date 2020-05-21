@@ -1,0 +1,67 @@
+@import '../styles.scss';
+
+.sidebar {
+  height: 100%;
+  min-height: 100vh;
+  width: 15.625rem;
+  position: absolute;
+  z-index: 1;
+  left: -100%;
+  background-color: $white;
+  transition: 1s;
+  @media screen and (min-width: $laptop) {
+    position: fixed;
+    left: 0%;
+  }
+
+  &__brand {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: $one-u;
+    border-bottom: 1px solid $light-gray;
+    &-img {
+      width: $three-u;
+      height: $three-u;
+      margin-right: $one-u;
+    }
+    &-title {
+      @extend .font-bold;
+      font-size: $one-u-h;
+    }
+  }
+
+  &__menu {
+    padding: $one-u;
+    &-item {
+      height: 50px;
+      padding: 0 $one-u;
+      display: flex;
+      border-radius: 4px;
+      align-items: center;
+      margin-bottom: $half-u;
+      @extend .font-bold;
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+
+      a {
+        color: $dark-gray;
+        margin-left: $one-u;
+      }
+
+      &--active {
+        @extend .sidebar__menu-item;
+        background-color: $blue;
+        box-shadow: 0px 3px 6px #97a7ff;
+        color: $white;
+        &:hover {
+          background-color: $blue;
+        }
+        a {
+          color: $white;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@import '../styles.scss';
+
+.layout {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  position: relative;
+  @media screen and (min-width: $laptop) {
+    display: flex;
+  }
+}

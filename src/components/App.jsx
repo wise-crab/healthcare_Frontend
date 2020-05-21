@@ -1,17 +1,14 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Login from '../views/Login';
-import Layout from '../views/Layout'
-import Header from '../components/Header'
+import Layout from '../views/Layout';
 
 const App = () => (
-  <>
-    <Header />
-    <BrowserRouter>
-      <Route exact path='/' component={Layout} />
-      <Route exact path='/login'component={Login} />
-    </BrowserRouter>
-  </>
-)
+  <BrowserRouter>
+    <Layout>
+      <Route exact path='/' component={Login} />
+    </Layout>
+  </BrowserRouter>
+);
 
 export default App;
