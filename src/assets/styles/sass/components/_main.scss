@@ -1,0 +1,17 @@
+@import '../styles.scss';
+
+.main-wrapper {
+  width: 100%;
+  @media screen and(min-width: $laptop) {
+    transition: 1s;
+    margin-left: 250px;
+  }
+}
+
+.main-content {
+  width: 100%;
+  padding: $one-u;
+  @media screen and (min-width: $tablet) {
+    padding: $one-u-h;
+  }
+}
