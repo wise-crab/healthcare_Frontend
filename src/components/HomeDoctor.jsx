@@ -1,7 +1,13 @@
 import React from 'react';
+import Search from './Search'
 
-const Home = () => {
-  const rol = 'doctor';
-  return <section className='doctor'>home del doctor</section>;
+const HomeDoctor = () => {
+
+  return(
+    <>
+      <h2>Clinical Examination assigments</h2>
+      <Search />
+    </>
+  );
 };
-export default Home;
+export default HomeDoctor;
