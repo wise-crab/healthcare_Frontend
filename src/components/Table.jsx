@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
 import '../../assets/styles/sass/components/__table.scss'
 
-class HomePatient extends Component {
+const createItem = (id, date, type, status) => {
+  return [id, date, type, status];
+}
+
+class Table extends Component {
   constructor(props) {
     super(props);
-    this.state = {}
+    this.id;
+    this.date;
+    this.type;
+    this.status;
   }
 
   render() {
@@ -31,4 +38,4 @@ class HomePatient extends Component {
   }
 }
 
-export default HomePatient
+export default Table
