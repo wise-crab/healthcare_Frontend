@@ -1,0 +1,11 @@
+.table{
+  width: 70vw;
+}
+.table__title{
+  display: grid;
+  grid-template-columns: 50px 1fr 1fr 1fr 1fr 20px;
+}
+.table__title-def{
+  display: flex;
+  justify-content: center;
+}
