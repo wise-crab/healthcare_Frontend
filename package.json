@@ -5,7 +5,7 @@
   "main": "./src/index.js",
   "scripts": {
     "build": "webpack --mode production",
-    "client": "webpack-dev-server --mode development --open",
+    "client": "webpack-dev-server --mode development --open --host 0.0.0.0",
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "json-server --watch --host 0.0.0.0 api.json",
     "start": "npm-run-all client server -p"
@@ -31,6 +31,8 @@
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
     "@babel/preset-react": "^7.9.4",
+    "ag-grid-community": "^23.1.1",
+    "ag-grid-react": "^23.1.1",
     "babel-loader": "^8.1.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
