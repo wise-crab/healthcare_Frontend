@@ -3,16 +3,20 @@ import '../assets/styles/sass/components/__table.scss';
 
 const Table =({ data }) => {
   const titles = Object.keys(data[0]);
+  
   return (
     <div className='table'>
       <div className='table__title'>
-        {titles.forEach((title) => 
-          <div className='table__title def'>{}</div>
-        )}
         <div className='table__title def'>Select</div>
-        <div className='table__title def'>Order Date</div>
-        <div className='table__title def'>Order ID</div>
-        <div className='table__title def'>Status</div>
+        {
+          titles.forEach(title => {
+            console.log(title);
+            return(
+              <h1>404</h1>
+            )
+          })
+        }
+      
       </div>
       <div className='table__content'>
         {data.map((item,idx) =>{

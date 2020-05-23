@@ -5,6 +5,7 @@ import '../assets/styles/sass/views/__login.scss';
 const Login = () => {
   const handleSubmit = (event) =>{
     event.preventDeafult();
+    
   }
   return(
     <section className='login'>
@@ -18,7 +19,7 @@ const Login = () => {
             onSubmit={handleSubmit}
           >
             <input
-              name='email'
+              name='username'
               className='input'
               type='text'
               placeholder='Username'
