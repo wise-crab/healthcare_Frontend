@@ -1,20 +1,10 @@
 import React, { Component } from 'react';
-import '../../assets/styles/sass/components/__table.scss'
+import '../../assets/styles/sass/components/__table.scss';
+import item from '../../classes/item'
 
-const createItem = (id, date, type, status) => {
-  return [id, date, type, status];
-}
-
-class Table extends Component {
-  constructor(props) {
-    super(props);
-    this.id;
-    this.date;
-    this.type;
-    this.status;
-  }
-
-  render() {
+const Table =() => {
+  const item1 = new item('666','blood', new Date(), '1');
+  
     return (
       <div className='table'>
         <div className='table__title'>
@@ -35,7 +25,6 @@ class Table extends Component {
         </div>
       </div>
     )
-  }
 }
 
 export default Table
