@@ -16,7 +16,6 @@ const App = () => {
       .then((data) => setExams(data))
       .catch((err) => console.error(err));
   }, []);
-  console.log(exams);
 
   return (
     <BrowserRouter>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../../assets/styles/sass/components/__table.scss';
-import item from '../../classes/item'
+import table from '../Table'
+import Table from '../Table';
 
 const data = [
   {
@@ -66,35 +67,11 @@ const data = [
 }
 ];
 
-const Table =() => {
+const HomePatient =() => {
 
-   
-    return (
-      <div className='table'>
-        <div className='table__title'>
-          <div className='table__title def'>Select</div>
-          <div className='table__title def'>Type Of Exam</div>
-          <div className='table__title def'>Order Date</div>
-          <div className='table__title def'>Order ID</div>
-          <div className='table__title def'>Status</div>
-        </div>
-        <div className='table__content'>
-          {data.map((item,idx) =>{
-            const date = new Date(item.date *1000).toDateString();
-            
-            return (
-                <div key={idx} className='table__content-item'>
-                <div className='table__item def'>Select</div>
-                <div className='table__item def'>{item.type}</div>
-                <div className='table__item def'>{date}</div>
-                <div className='table__item def'>{item.$oid}</div>
-                <div className='table__item def'>{item.status}</div>
-              </div>
-            )}
-          )}            
-        </div>
-      </div>
-    )
+  return (
+    <Table data={data}/>
+  )
 }
 
-export default Table
+export default HomePatient;
