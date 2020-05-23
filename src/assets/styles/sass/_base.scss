@@ -25,40 +25,27 @@ body {
 h1 {
   color: $black;
   @extend .font-title;
-  font-size: calc(3.209rem + 1vw);
+  font-size: calc(2.5rem + 1vw);
+  line-height: calc(2.8rem + 1vw);
   margin-bottom: $one-u;
 }
 
 h2 {
   color: $black;
   @extend .font-sub-title;
-  font-size: calc(2.5rem + 1vw);
-  margin-bottom: $one-u;
-}
-
-h3 {
   font-size: calc(2rem + 1vw);
-}
-
-h4 {
-  font-size: calc(1.6rem + 1vw);
-}
-
-h5 {
-  font-size: calc(1.2rem + 1vw);
-}
-
-h6 {
-  font-size: 1rem;
+  line-height: calc(2.3rem + 1vw);
+  margin-bottom: $one-u;
 }
 
 h3,
 h4,
 h5,
 h6 {
+  font-size: calc(1rem + 1vw);
+  line-height: calc(1.3rem + 1vw);
   color: $black;
   @extend .font-regular;
-  margin-bottom: $one-u;
 }
 
 //Elements

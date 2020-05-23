@@ -1,0 +1,54 @@
+@import '../styles.scss';
+.profile {
+    margin-bottom: $one-u;
+    @media screen and(min-width: $tablet) {
+        margin-bottom: $one-u-h;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media screen and(min-width: $mobile) {
+            flex-direction: row;
+        }
+
+        @media screen and(min-width: $tablet) {
+            justify-content: center;
+        }
+
+        &-avatar {
+            @media screen and(min-width: $mobile) {
+                margin-right: $one-u;
+            }
+            img {
+                border-radius: 50%;
+                box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+            }
+        }
+        &-info {
+            text-align: center;
+            @media screen and(min-width: $mobile) {
+                text-align: initial;
+            }
+        }
+    }
+}
+
+.profile-form {
+    h4 {
+        margin-bottom: $one-u;
+    }
+}
+
+.main-content {
+    @media screen and(min-width: $laptop) {
+        padding-right: $four-u;
+        padding-left: $four-u;
+    }
+    @media screen and(min-width: $desktop) {
+        padding-right: calc(16px * 12);
+        padding-left: calc(16px * 12);
+    }
+}
