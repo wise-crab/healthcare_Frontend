@@ -7,12 +7,13 @@ const Table =({ data }) => {
   return (
     <div className='table'>
       <div className='table__title'>
-        <div className='table__title def'>Select</div>
         {
-          titles.forEach(title => {
+          titles.map((title,idx) => {
             console.log(title);
             return(
-              <h1>404</h1>
+              <div className='table__title def' key={idx}>
+                <h5>{title}</h5>
+              </div>
             )
           })
         }
