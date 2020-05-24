@@ -1,7 +1,7 @@
 import React from 'react';
 import Search from '../Search'
 
-const HomeDoctor = () => {
+const Doctor = () => {
 
   return(
     <>
@@ -10,4 +10,4 @@ const HomeDoctor = () => {
     </>
   );
 };
-export default HomeDoctor;
+export default Doctor;

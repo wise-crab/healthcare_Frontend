@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../../assets/styles/sass/components/__table.scss';
 import Table from '../Table';
 
-const HomePatient = () => {
+const Patient = () => {
   const [state, setState] = useState({ isReady: false, data: [] });
   useEffect(() => {
     fetch('https://data-mock-278118.wl.r.appspot.com/api/exams')
@@ -18,4 +18,4 @@ const HomePatient = () => {
   }
   return <Table data={state.data} />;
 };
-export default HomePatient;
+export default Patient;
