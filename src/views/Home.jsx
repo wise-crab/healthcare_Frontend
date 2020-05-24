@@ -8,23 +8,10 @@ import { getUserByID } from '../APIS/apis'
 import axios from 'axios';
                               
 class Home extends Component {
-  constructor(){
-    super();
-    this.state = {
-      users : []
-    }
-  }
 
-  async componentDidMount() {
-		const res = await axios.get(getUserByID);
-		this.setState({
-			users: res.data
-		});
-	}
-    
   render(){
     
-    const role = this.state.users[0];
+    const role = this.props.users[0].role;
     console.log(role);
     
     return (
