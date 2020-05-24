@@ -39,5 +39,8 @@ class Home extends Component {
   }
 };
 
+const mapStateToProps = (reducers) => {
+  return reducers.usersReducer;
+}
 
-export default connect (null, null) (Home);
+export default connect (mapStateToProps, null) (Home);
