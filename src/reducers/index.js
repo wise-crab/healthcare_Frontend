@@ -1,5 +1,6 @@
-const reducer = (state, action) => {
-  return state;
-};
+import { combineReducers } from 'redux';
+import usersReducer from './usersReducer';
 
-export default reducer;
+export default combineReducers({
+  usersReducer
+});
