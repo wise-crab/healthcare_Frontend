@@ -4,7 +4,7 @@ import HomePatient from '../components/Homes/HomePatient';
 import Admin from '../components/Homes/Admin';
 
 const Home = () => {
-  const rol = 'admin';
+  const rol = 'patient';
   return (
     <section className='doctor card'>
       {rol == 'patient' && <HomePatient />}
