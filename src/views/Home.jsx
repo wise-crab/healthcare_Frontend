@@ -6,16 +6,21 @@ import Admin from '../components/Profiles/Admin';
 import Bacteriologist from '../components/Profiles/Bacteriologist';
                               
 const Home = () => {
-  const role = 'bacteriologist';
+  const role = this;
+  console.log(role);
+  
   return (
     <section className='doctor card'>
-      {role == 'patient' && <Patient />}
+      {/* {role == 'patient' && <Patient />}
       {role == 'doctor' && <Doctor />}
       {role == 'admin' && <Admin />}
-      {role == 'bacteriologist' && <Bacteriologist />}
+      {role == 'bacteriologist' && <Bacteriologist />} */}
     </section>
   );
 };
 
+const mapStateToProps = (reducers) => {
+  return reducers.usersReducer;
+}
 
-export default connect (null, null) (Home);
+export default connect (mapStateToProps, null) (Home);
