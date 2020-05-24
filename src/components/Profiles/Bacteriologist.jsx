@@ -11,7 +11,7 @@ const Bacteriologist = ({ children, history }) => {
   }
 
   return(
-    <section className='main-wrapper' style={styles}>
+    <section className='' style={styles}>
       <Sidebar />
       <Search />
       <div className='main-content'>{children}</div>

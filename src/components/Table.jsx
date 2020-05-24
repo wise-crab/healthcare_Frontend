@@ -1,5 +1,5 @@
 import React from 'react';
-import '../assets/styles/sass/components/__table.scss';
+import '../assets/styles/sass/components/_table.scss';
 
 const Table =({ data }) => {
   const titles = Object.keys(data[0]);

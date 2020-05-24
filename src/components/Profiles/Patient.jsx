@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
-import '../../assets/styles/sass/components/__table.scss';
 import Table from '../Table';
 import Sidebar from '../Sidebar'
 
@@ -23,7 +22,7 @@ const Patient = ({ children, history }) => {
     return 'Loading';
   }
   return (
-    <section className='main-wrapper' style={styles}>
+    <section className='' style={styles}>
       <Sidebar />
       <Table data={state.data} />
     </section>

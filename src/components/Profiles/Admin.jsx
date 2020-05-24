@@ -10,7 +10,7 @@ const Admin = ({ children, history }) => {
     styles = { marginLeft: '0' };
   }
   return(
-    <section className='main-wrapper' style={styles}>
+    <section className='' style={styles}>
       <Sidebar/>
       <Form className='main-content'/>
     </section>

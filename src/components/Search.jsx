@@ -1,5 +1,5 @@
 import React from 'react';
-import '../assets/styles/sass/components/__search.scss';
+import '../assets/styles/sass/components/_search.scss';
 
 const Search = () => {
   const placeholder=`enter the patient ID or name`
