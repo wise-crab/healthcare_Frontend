@@ -2,7 +2,7 @@ import React from 'react';
 import '../assets/styles/sass/views/_profile.scss';
 
 const Profile = (props) => (
-  <div>
+  <div className='profile-container'>
     <h1>Mi perfil</h1>
     <section className='profile card'>
       <div className='profile__content'>
