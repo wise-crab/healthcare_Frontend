@@ -1,13 +1,19 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
+import '../../assets/styles/sass/components/_main.scss';
+import Sidebar from '../Sidebar'
 import Form from '../Form'
 
-const Admin = () => {
-
+const Admin = ({ children, history }) => {
+  let styles = {};
+  if (history.location.pathname === '/') {
+    styles = { marginLeft: '0' };
+  }
   return(
-    <>
-      <h2>Clinical Examination assigments</h2>
-      <Form />
-    </>
+    <section className='main-wrapper' style={styles}>
+      <Sidebar/>
+      <Form className='main-content'/>
+    </section>
   );
 };
-export default Admin;
+export default withRouter(Admin);
