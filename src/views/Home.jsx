@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux'
 import Doctor from '../components/Profiles/Doctor';
 import Patient from '../components/Profiles/Patient';
 import Admin from '../components/Profiles/Admin';
@@ -15,4 +16,6 @@ const Home = () => {
     </section>
   );
 };
-export default Home;
+
+
+export default connect (null, null) (Home);
