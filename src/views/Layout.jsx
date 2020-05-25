@@ -7,7 +7,7 @@ import '../assets/styles/sass/views/_layout.scss';
 const Layout = ({ children, history }) => {
   return (
     <section className='layout'>
-      {history.location.pathname !== '/'}
+      {history.location.pathname !== '/' && <Sidebar />}
       <Main>{children}</Main>
     </section>
   );

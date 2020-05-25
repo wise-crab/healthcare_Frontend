@@ -11,7 +11,6 @@ const Admin = ({ children, history }) => {
   }
   return(
     <section className='' style={styles}>
-      <Sidebar/>
       <Form className='main-content'/>
     </section>
   );

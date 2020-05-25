@@ -23,7 +23,6 @@ const Patient = ({ children, history }) => {
   }
   return (
     <section className='' style={styles}>
-      <Sidebar />
       <Table data={state.data} />
     </section>
   );
