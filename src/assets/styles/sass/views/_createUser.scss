@@ -1,0 +1,28 @@
+@import '../styles.scss';
+
+.create-user-form {
+  &__title {
+    margin-bottom: $one-u;
+  }
+
+  &__row {
+    @media screen and(min-width: $tablet) {
+      display: flex;
+    }
+  }
+
+  &__form-group {
+    @media screen and(min-width: $tablet) {
+      flex: 1;
+      &:first-of-type {
+        margin-right: $one-u;
+      }
+    }
+  }
+}
+
+section.create-user-form.card {
+  @media screen and(min-width: $desktop) {
+    padding: $four-u;
+  }
+}
