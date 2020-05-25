@@ -1,4 +1,5 @@
 import { getUserByID } from '../APIS/apis';
+import { GET_EXAMS_LIST } from '../types/examsTypes';
 
 export const getUsersList = () => async (dispatch) => {
   const exams = await fetch(getUserByID)

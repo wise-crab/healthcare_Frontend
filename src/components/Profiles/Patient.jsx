@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import Table from '../Table';
-import Sidebar from '../Sidebar'
 
 const Patient = ({ children, history }) => {
   let styles = {};
