@@ -4,10 +4,18 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Login from '../views/Login';
 import Home from '../views/Home';
 import Layout from '../views/Layout';
-import NotFound from '../views/NotFound.jsx';
-import Profile from '../views/UpdateProfile'
+import Profile from '../views/Profile';
+import CreateUser from '../views/CreateUser';
 
-const API = 'http://localhost:3000/users';
+const App = () => (
+  <BrowserRouter>
+    <Layout>
+      <Route exact path='/' component={Login} />
+      <Route exact path='/profile' component={Profile} />
+      <Route exact path='/create-user' component={CreateUser} />
+    </Layout>
+  </BrowserRouter>
+);
 
 const App = () => {
   const [exams, setExams] = useState([]);
