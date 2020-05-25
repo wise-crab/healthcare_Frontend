@@ -9,7 +9,6 @@ const Table =({ data }) => {
       <div className='table__title'>
         {
           titles.map((title,idx) => {
-            console.log(title);
             return(
               <div className='table__title def' key={idx}>
                 <h5>{title}</h5>

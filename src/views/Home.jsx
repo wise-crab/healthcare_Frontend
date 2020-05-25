@@ -11,9 +11,6 @@ class Home extends Component {
   render(){
     
     const role = this.props.users[0].role;
-    console.log(role);
-    console.log(this.props.getUsersList);
-    
     
     return (
       <section className='doctor card'>

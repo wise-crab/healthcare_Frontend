@@ -24,6 +24,7 @@ Healthcare Dashboard is a management system of clinical laboratory tests that pr
     react-router-dom (define some routes needed)
     redux (to states management)
     react-redux (to get the provider, who's provide the whole app)
+    redux-thunk (allow the actions storage funcs, in this case we need asyncronous funcs)
 
 ### Dev Dependencies:
     babel-eslint (ECMAScript-6 transpilator to JS easy to browser)

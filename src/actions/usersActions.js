@@ -1,6 +1,11 @@
-export const getUsersList = () => (dispatch) => {
+import { getUserByID } from '../APIS/apis';
+
+export const getUsersList = () => async (dispatch) => {
+  const exams = await fetch(getUserByID)
+  console.log(exams);
+  
   dispatch({
     type: 'GET_USERS_LIST',
-    payload: [1,2,3]
+    payload: exams.data
   })
 };
