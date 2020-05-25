@@ -1,30 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Login from '../views/Login';
 import Home from '../views/Home';
 import Layout from '../views/Layout';
-import NotFound from '../views/NotFound.jsx';
-import Profile from '../views/UpdateProfile'
-
-const API = 'http://localhost:3000/users';
+import Profile from '../views/Profile';
+import CreateUser from '../views/CreateUser';
+import NotFound from '../views/NotFound';
 
 const App = () => {
-  const [exams, setExams] = useState([]);
-
-  useEffect(() => {
-    fetch(API)
-      .then((resp) => resp.json())
-      .then((data) => setExams(data))
-      .catch((err) => console.error(err));
-  }, []);
-
   return (
     <BrowserRouter>
       <Layout>
         <Switch>
           <Route exact path='/' component={Login} />
           <Route exact path='/home' component={Home} />
+          <Route exact path='/profile' component={Profile} />
+          <Route exact path='/create-user' component={CreateUser} />
           <Route component component={NotFound} />
         </Switch>
       </Layout>

@@ -12,6 +12,7 @@
 body {
   width: 100%;
   max-width: 100%;
+  min-width: 320px;
   background: $background-gray;
   font-size: 1rem;
   @extend .font-regular;
@@ -79,6 +80,11 @@ label {
   border-radius: 5px;
   border: none;
   outline: none;
+  @media screen and(min-width: $tablet) {
+    width: auto;
+    padding-left: $two-u;
+    padding-right: $two-u;
+  }
 }
 
 .card {
@@ -87,6 +93,9 @@ label {
   background-color: $white;
   border-radius: $half-u;
   box-shadow: 0rem 4px 6px rgba(0, 0, 0, 0.16);
+  @media screen and(min-width: $tablet) {
+    padding: $one-u-h;
+  }
 }
 
 // @media screen and (min-width: $mobile) {

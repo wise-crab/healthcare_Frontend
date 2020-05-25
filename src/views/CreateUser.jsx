@@ -9,12 +9,12 @@ const CreateUser = () => {
         <h4 className='create-user-form__title'>
           Formulario de creación de roles
         </h4>
-        <div className='row'>
-          <div className='form-group'>
+        <div className='create-user-form__row'>
+          <div className='create-user-form__form-group'>
             <label htmlFor='name'>Nombre</label>
             <input type='text' name='name' id='name' placeholder='Nombre' />
           </div>
-          <div className='form-group'>
+          <div className='create-user-form__form-group'>
             <label htmlFor='last_name'>Apellidos</label>
             <input
               type='text'
@@ -24,8 +24,8 @@ const CreateUser = () => {
             />
           </div>
         </div>
-        <div className='row'>
-          <div className='form-group'>
+        <div className='create-user-form__row'>
+          <div className='create-user-form__form-group'>
             <label htmlFor='email'>Email</label>
             <input
               type='email'
@@ -34,7 +34,7 @@ const CreateUser = () => {
               placeholder='email@example.com'
             />
           </div>
-          <div className='form-group'>
+          <div className='create-user-form__form-group'>
             <label htmlFor='cdi'>Documento</label>
             <input
               type='text'
@@ -44,8 +44,8 @@ const CreateUser = () => {
             />
           </div>
         </div>
-        <div className='row'>
-          <div className='form-group'>
+        <div className='create-user-form__row'>
+          <div className='create-user-form__form-group'>
             <label htmlFor='mobile_phone'>Teléfono Movil</label>
             <input
               type='number'
@@ -54,7 +54,7 @@ const CreateUser = () => {
               placeholder='Teléfono movil'
             />
           </div>
-          <div className='form-group'>
+          <div className='create-user-form__form-group'>
             <label htmlFor='phone'>Teléfono Fijo</label>
             <input
               type='text'
@@ -64,8 +64,8 @@ const CreateUser = () => {
             />
           </div>
         </div>
-        <div className='row'>
-          <div className='form-group'>
+        <div className='create-user-form__row'>
+          <div className='create-user-form__form-group'>
             <label htmlFor='role'>Rol de usuario</label>
             <select name='role' id='role'>
               <option value='patient'>Patient</option>
@@ -75,6 +75,7 @@ const CreateUser = () => {
             </select>
           </div>
         </div>
+        <button className='button'>Guardar</button>
       </section>
     </>
   );
