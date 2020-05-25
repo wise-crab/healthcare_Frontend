@@ -57,7 +57,8 @@ a {
   text-decoration: none;
 }
 
-input:not([type='checkbox']):not([type='radio']) {
+input:not([type='checkbox']):not([type='radio']),
+select {
   height: $two-u-h;
   padding-left: $half-u;
   padding-right: $half-u;

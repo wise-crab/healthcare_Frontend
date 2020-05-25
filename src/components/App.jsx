@@ -5,6 +5,7 @@ import Login from '../views/Login';
 import Home from '../views/Home';
 import Layout from '../views/Layout';
 import NotFound from '../views/NotFound.jsx';
+import Profile from '../views/UpdateProfile'
 
 const API = 'http://localhost:3000/users';
 

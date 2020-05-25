@@ -12,7 +12,6 @@ const Doctor = ({ children, history }) => {
 
   return(
     <section className='' style={styles}>
-      <Sidebar />
       <Search />
       <div className='main-content'>{children}</div>
     </section>
