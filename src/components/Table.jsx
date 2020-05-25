@@ -42,4 +42,4 @@ const mapStateToProps = (reducers) =>{
   return reducers.patientsReducer;
 }
 
-export default connect()(Table)
+export default connect(mapStateToProps)(Table)
