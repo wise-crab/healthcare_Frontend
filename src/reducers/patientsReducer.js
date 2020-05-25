@@ -7,7 +7,7 @@ const INITIAL_STATE = {
       "last_name": "Causbey",
       "email": "pcausbey4@tinyurl.com",
       "phone": "142-427-3406",
-      "role": "patient"
+      "role": "admin"
       }
   ]
 };
