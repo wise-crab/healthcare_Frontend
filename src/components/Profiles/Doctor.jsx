@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import Search from '../Search'
 import '../../assets/styles/sass/components/_main.scss';
-import Sidebar from '../Sidebar'
+import ExamsAssign from '../ExamsAssign'
 
 const Doctor = ({ children, history }) => {
   let styles = {};
@@ -12,7 +12,7 @@ const Doctor = ({ children, history }) => {
 
   return(
     <section className='' style={styles}>
-      <Search />
+      <ExamsAssign />
       <div className='main-content'>{children}</div>
     </section>
   );
