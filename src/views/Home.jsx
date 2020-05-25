@@ -4,15 +4,16 @@ import Doctor from '../components/Profiles/Doctor';
 import Patient from '../components/Profiles/Patient';
 import Admin from '../components/Profiles/Admin';
 import Bacteriologist from '../components/Profiles/Bacteriologist';
-import { getUserByID } from '../APIS/apis'
-import axios from 'axios';
-                              
+import * as usersActions from '../actions/usersActions';
+
 class Home extends Component {
 
   render(){
     
     const role = this.props.users[0].role;
     console.log(role);
+    console.log(this.props.getUsersList);
+    
     
     return (
       <section className='doctor card'>
@@ -30,4 +31,4 @@ const mapStateToProps = (reducers) => {
   return reducers.usersReducer;
 }
 
-export default connect (mapStateToProps, null) (Home);
+export default connect (mapStateToProps, usersActions) (Home);

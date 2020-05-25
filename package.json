@@ -40,7 +40,6 @@
     "redux": "^4.0.5"
   },
   "devDependencies": {
-    "axios": "^0.19.2",
     "babel-eslint": "^10.1.0",
     "css-loader": "^3.5.3",
     "enzyme": "^3.11.0",
