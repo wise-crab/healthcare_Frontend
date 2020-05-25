@@ -53,9 +53,9 @@ class ExamsAssing extends Component {
 
         <div className='Form__container'>
           {
-              this.state.exams.map(assign => {
+              this.state.exams.map((assign,idx) => {
                 return(
-                  <div className='Form__container item'>
+                  <div key={idx} className='Form__container item'>
                     <i>icon</i>
                     <h6>{assign.type}</h6>
                   </div>
