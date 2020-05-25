@@ -18,7 +18,7 @@ const Sidebar = (props) => {
       { path: '#', name: 'Home', icon: 'icon_name' },
       { path: '#', name: 'Patient List', icon: 'icon_name' },
     ],
-    bacteriologist: [
+    admin: [
       { path: '#', name: 'Home', icon: 'icon_name' },
       { path: '#', name: 'Users', icon: 'icon_name' },
       { path: '#', name: 'Create User', icon: 'icon_name' },
