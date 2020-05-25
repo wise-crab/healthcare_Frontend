@@ -75,6 +75,7 @@ const CreateUser = () => {
             </select>
           </div>
         </div>
+        <button className='button'>Guardar</button>
       </section>
     </>
   );
