@@ -25,7 +25,7 @@ class Home extends Component {
 };
 
 const mapStateToProps = (reducers) => {
-  return reducers.usersReducer;
+  return reducers.patientsReducer;
 }
 
 export default connect (mapStateToProps, usersActions) (Home);

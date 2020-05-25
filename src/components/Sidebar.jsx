@@ -1,8 +1,20 @@
 import React from 'react';
+import { connect } from 'react-redux'
 import '../assets/styles/sass/components/_sidebar.scss';
 import logo from '../assets/img/logo.png';
 
-const Sidebar = () => {
+const Sidebar = (props) => {
+  const SIDEBAR_OPTIONS = {
+    patient:['Exams List','Exams Results'],
+    doctor:['Home','Patients List'],
+    bacteriologist:['Home','Patient List'],
+    admin:['Home','Users','Create user','Bulky Upload']
+  }
+  const role = props.patient[0].role
+  const options = SIDEBAR_OPTIONS[role];
+  console.log(props);
+  
+  
   return (
     <section className='sidebar'>
       <div className='sidebar__brand'>
@@ -10,31 +22,26 @@ const Sidebar = () => {
         <div className='sidebar__brand-title'>Examedic</div>
       </div>
       <section className='sidebar__nav'>
-        <ul className='sidebar__menu'>
-          <li className='sidebar__menu-item'>
-            <i>icon</i>
-            <a href=''>link</a>
-          </li>
-          <li className='sidebar__menu-item'>
-            <i>icon</i>
-            <a href=''>link</a>
-          </li>
-          <li className='sidebar__menu-item--active'>
-            <i>icon</i>
-            <a href=''>link</a>
-          </li>
-          <li className='sidebar__menu-item'>
-            <i>icon</i>
-            <a href=''>link</a>
-          </li>
-          <li className='sidebar__menu-item'>
-            <i>icon</i>
-            <a href=''>link</a>
-          </li>
-        </ul>
+        <ol className='sidebar__menu'>
+        {
+          options.map((option, idx) => {
+            return(
+              <li key={idx} className='sidebar__menu-item'>
+                <i>icon</i>
+                <a href=''>{option}</a>
+              </li>
+            )
+          })
+        }
+          
+        </ol>
       </section>
     </section>
   );
 };
 
-export default Sidebar;
+const mapStateToProps = (reducers) => {
+  return reducers.patientsReducer;
+}
+
+export default connect(mapStateToProps)(Sidebar);
