@@ -1,20 +1,38 @@
 import React from 'react';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import '../assets/styles/sass/components/_sidebar.scss';
 import logo from '../assets/img/logo.png';
 
 const Sidebar = (props) => {
-  const SIDEBAR_OPTIONS = {
-    patient:['Exams List','Exams Results'],
-    doctor:['Home','Patients List'],
-    bacteriologist:['Home','Patient List'],
-    admin:['Home','Users','Create user','Bulky Upload']
+  const routes = {
+    patient: [
+      { path: '/home', name: 'Exams List', icon: 'icon_name' },
+      { path: '#', name: 'Exams Results', icon: 'icon_name' },
+    ],
+    doctor: [
+      { path: '#', name: 'Home', icon: 'icon_name' },
+      { path: '#', name: 'Patient List', icon: 'icon_name' },
+    ],
+    bacteriologist: [
+      { path: '#', name: 'Home', icon: 'icon_name' },
+      { path: '#', name: 'Patient List', icon: 'icon_name' },
+    ],
+    bacteriologist: [
+      { path: '#', name: 'Home', icon: 'icon_name' },
+      { path: '#', name: 'Users', icon: 'icon_name' },
+      { path: '#', name: 'Create User', icon: 'icon_name' },
+      { path: '#', name: 'Bulky Upload', icon: 'icon_name' },
+    ],
+  };
+
+  const role = props.patient[0].role;
+  const options = routes[role];
+
+  function isCurrentRoute(route) {
+    return props.location.pathname === route ? '--active' : '';
   }
-  const role = props.patient[0].role
-  const options = SIDEBAR_OPTIONS[role];
-  console.log(props);
-  
-  
+
   return (
     <section className='sidebar'>
       <div className='sidebar__brand'>
@@ -23,17 +41,17 @@ const Sidebar = (props) => {
       </div>
       <section className='sidebar__nav'>
         <ol className='sidebar__menu'>
-        {
-          options.map((option, idx) => {
-            return(
-              <li key={idx} className='sidebar__menu-item'>
-                <i>icon</i>
-                <a href=''>{option}</a>
+          {options.map((option, idx) => {
+            return (
+              <li
+                key={idx}
+                className={`sidebar__menu-item${isCurrentRoute(option.path)}`}
+              >
+                <i>{option.icon}</i>
+                <a href={option.path}>{option.name}</a>
               </li>
-            )
-          })
-        }
-          
+            );
+          })}
         </ol>
       </section>
     </section>
@@ -42,6 +60,6 @@ const Sidebar = (props) => {
 
 const mapStateToProps = (reducers) => {
   return reducers.patientsReducer;
-}
+};
 
-export default connect(mapStateToProps)(Sidebar);
+export default connect(mapStateToProps)(withRouter(Sidebar));
