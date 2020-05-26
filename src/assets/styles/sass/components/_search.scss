@@ -1,0 +1,7 @@
+@import '../styles.scss';
+#search-component {
+    display: flex;
+    button {
+        margin-left: $one-u;
+    }
+}

@@ -1,13 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { withRouter } from 'react-router-dom';
 import Table from '../Table';
-import Sidebar from '../Sidebar'
-
-const Patient = ({ children, history }) => {
-  let styles = {};
-  if (history.location.pathname === '/') {
-    styles = { marginLeft: '0' };
-  }
+const Patient = () => {
   const [state, setState] = useState({ isReady: false, data: [] });
   useEffect(() => {
     fetch('https://data-mock-278118.wl.r.appspot.com/api/exams')
@@ -22,9 +15,9 @@ const Patient = ({ children, history }) => {
     return 'Loading';
   }
   return (
-    <section className='' style={styles}>
+    <section>
       <Table data={state.data} />
     </section>
   );
 };
-export default withRouter(Patient);
+export default Patient;
