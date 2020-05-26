@@ -1,40 +1,37 @@
 import React from 'react';
 import '../assets/styles/sass/components/_table.scss';
 
-const Table =({ data }) => {
+const Table = ({ data }) => {
   const titles = Object.keys(data[0]);
-  
-  return (
-    <div className='table'>
-      <div className='table__title'>
-        {
-          titles.map((title,idx) => {
-            return(
-              <div className='table__title def' key={idx}>
-                <h5>{title}</h5>
-              </div>
-            )
-          })
-        }
-      
-      </div>
-      <div className='table__content'>
-        {data.map((item,idx) =>{
-          const date = new Date(item.date *1000).toDateString();
-          
-          return (
-              <div key={idx} className='table__content-item'>
-                <div className='table__item def'>Select</div>
-                <div className='table__item def'>{item.type}</div>
-                <div className='table__item def'>{date}</div>
-                <div className='table__item def'>{item.$oid}</div>
-                <div className='table__item def'>{item.status}</div>
-            </div>
-          )}
-        )}            
-      </div>
-    </div>
-  )
-}
 
-export default Table
+  return (
+    <div className='table-responsive'>
+      <table className='table table-striped'>
+        <thead>
+          <tr>
+            {titles.map((title, idx) => {
+              return <th key={idx}>{title}</th>;
+            })}
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((item, idx) => {
+            const date = new Date(item.date * 1000).toDateString();
+
+            return (
+              <tr key={idx}>
+                <td>Select</td>
+                <td>{item.type}</td>
+                <td>{date}</td>
+                <td>{item.$oid}</td>
+                <td>{item.status}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+  );
+};
+
+export default Table;

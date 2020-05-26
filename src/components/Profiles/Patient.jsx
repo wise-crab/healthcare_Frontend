@@ -15,9 +15,12 @@ const Patient = () => {
     return 'Loading';
   }
   return (
-    <section>
-      <Table data={state.data} />
-    </section>
+    <>
+      <h1>Title</h1>
+      <section className='card'>
+        <Table data={state.data} />
+      </section>
+    </>
   );
 };
 export default Patient;
