@@ -34,35 +34,36 @@ class ExamsAssing extends Component {
     return (
       <div className='Form'>
         <div className='Form__title'>Exams Assigment</div>
-        <div className='Form__conatiner'>
-  
-          <h2>name last_name</h2>
-          <h3>Id</h3>
-  
-  
-          <div className='Form__container--field'>
-            <select defaultValue={'DEFAULT'} >
-                  <option value="hematocrit">Hematocrit</option>
-                  <option value="white">white blood cells</option>
-                  <option value="platelets">Platelets</option>
-                  <option value="red">Red blood cells</option>
-            </select>
-            
-            <button>+ Add the Exam</button>
-        </div>
+          <div className='Form__conatiner'>
+    
+            <h2>name last_name</h2>
+            <h3>Id</h3>
+    
+    
+            <div className='Form__container--field'>
+              <select defaultValue={'DEFAULT'} >
+                    <option value="hematocrit">Hematocrit</option>
+                    <option value="white">white blood cells</option>
+                    <option value="platelets">Platelets</option>
+                    <option value="red">Red blood cells</option>
+              </select>
+              
+              <button>+ Add the Exam</button>
+            </div>
 
-        <div className='Form__container'>
-          {
-              this.state.exams.map((assign,idx) => {
-                return(
-                  <div key={idx} className='Form__container item'>
-                    <i>icon</i>
-                    <h6>{assign.type}</h6>
-                  </div>
-                )
-              })
-          }
-        </div>  
+          <div className='Form__container'>
+            {
+                this.state.exams.map((assign,idx) => {
+                  return(
+                    <div key={idx} className='Form__container item'>
+                      <i>icon</i>
+                      <h6>{assign.type}</h6>
+                    </div>
+                  )
+                })
+            }
+            <button> Submit Exam</button>
+          </div>  
   
         </div>
       </div>
