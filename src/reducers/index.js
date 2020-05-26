@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
-import usersReducer from './usersReducer';
+import patientsReducer from './patientsReducer';
+import examsReducer from './examsReducer'
 
 export default combineReducers({
-  usersReducer
+  patientsReducer
 });

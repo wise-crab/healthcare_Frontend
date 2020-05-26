@@ -50,5 +50,7 @@ Healthcare Dashboard is a management system of clinical laboratory tests that pr
 
 ## Developing questions found
 
+I need an API that provides examsByPatient
+
 
 regex: "id": \{\n\s+("\$oid":.*$)\s*\}

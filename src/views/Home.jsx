@@ -4,7 +4,7 @@ import Doctor from '../components/Profiles/Doctor';
 import Patient from '../components/Profiles/Patient';
 import Admin from '../components/Profiles/Admin';
 import Bacteriologist from '../components/Profiles/Bacteriologist';
-import * as usersActions from '../actions/usersActions';
+import * as usersActions from '../actions/patientsActions';
 
 class Home extends Component {
   render() {

@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux'
 import '../assets/styles/sass/components/_table.scss';
 
 const Table =({ data }) => {
@@ -37,4 +38,8 @@ const Table =({ data }) => {
   )
 }
 
-export default Table
+const mapStateToProps = (reducers) =>{
+  return reducers.patientsReducer;
+}
+
+export default connect(mapStateToProps)(Table)

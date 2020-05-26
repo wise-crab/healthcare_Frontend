@@ -1,0 +1,1 @@
+export const GET_EXAMS_LIST = 'get_exams_list';
