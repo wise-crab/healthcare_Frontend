@@ -13,7 +13,6 @@ export const loginUser = ({username, password}, redirect) => {
       password,
     })
       .then(({data})=>{
-        console.log(data.data);
         dispatch(loginRequest(data.data));
         document.cookie = `token=${data.data.token}`
         document.cookie = `role=${data.data.userRol}`
