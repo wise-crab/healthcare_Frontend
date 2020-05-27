@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import logo from '../assets/img/Brand-icon-horizontal.png';
-import { loginUser } from '../actions/userActions';
+import { loginUser } from '../actions/loginActions';
 import '../assets/styles/sass/views/__login.scss';
 
 const Login = (props) => {
@@ -21,7 +21,7 @@ const Login = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    props.loginUser(form, '/home')
+    props.loginUser(form)
   };
 
   return (

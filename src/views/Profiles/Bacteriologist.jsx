@@ -1,10 +1,10 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import Search from '../Search'
+import Search from '../../components/Search'
 import '../../assets/styles/sass/components/_main.scss';
-import ExamsAssign from '../ExamsAssign'
+import Sidebar from '../../components/Sidebar'
 
-const Doctor = ({ children, history }) => {
+const Bacteriologist = ({ children, history }) => {
   let styles = {};
   if (history.location.pathname === '/') {
     styles = { marginLeft: '0' };
@@ -12,9 +12,9 @@ const Doctor = ({ children, history }) => {
 
   return(
     <section className='' style={styles}>
-      <ExamsAssign />
+      <Search />
       <div className='main-content'>{children}</div>
     </section>
   );
 };
-export default withRouter(Doctor);
+export default withRouter(Bacteriologist);

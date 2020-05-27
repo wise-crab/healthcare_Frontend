@@ -4,5 +4,6 @@ import loginReducer from './loginReducer';
 import examsReducer from './examsReducer'
 
 export default combineReducers({
-  patientsReducer
+  patientsReducer,
+  loginReducer
 });
