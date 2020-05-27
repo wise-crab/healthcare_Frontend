@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { Redirect } from 'react-router-dom';
 
 export const loginRequest = payload => ({
   type: 'LOGIN_REQUEST',
@@ -15,6 +14,7 @@ export const loginUser = ({username, password}, redirect) => {
     })
       .then(({data})=>{
         console.log(data.data);
+        dispatch(loginRequest(data.data));
         document.cookie = `token=${data.data.token}`
         document.cookie = `role=${data.data.userRol}`
       })

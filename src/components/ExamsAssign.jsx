@@ -28,9 +28,7 @@ class ExamsAssing extends Component {
       ]
     }
   }
-  render(){
-    console.log(this);
-    
+  render(){    
     return (
       <div className='Form'>
         <div className='Form__title'>Exams Assigment</div>

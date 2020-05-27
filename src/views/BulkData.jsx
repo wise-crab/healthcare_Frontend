@@ -12,7 +12,6 @@ class BulkData extends Component {
       proviewData: [],
     };
     this.onDrop = (files) => {
-      console.log(files[0]);
       const reader = new FileReader();
       reader.onload = () => {
         csv.parse(reader.result, { columns: true }, (err, data) => {

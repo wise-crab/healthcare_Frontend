@@ -9,7 +9,9 @@ import * as usersActions from '../actions/patientsActions';
 class Home extends Component {
 
   render(){
+    // console.log(this);
     
+
     const role = this.props.patient[0].role;
     
     return (
