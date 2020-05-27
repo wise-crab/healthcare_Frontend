@@ -7,19 +7,21 @@ export const loginRequest = payload => ({
 })
 
 export const loginUser = ({username, password}, redirect) => {
-  console.log(`username: ${username} \n password: ${password}`);
-  
+
   return (dispatch) => {
     axios.post('http://localhost:3000/login', {
       username,
       password,
     })
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+      .then(({data})=>{
+        console.log(data.data);
+        document.cookie = `token=${data.data.token}`
+        document.cookie = `role=${data.data.userRol}`
+      })
+      .then(()=>{
+        window.location.href = redirect;
+      })
+      .catch( (err) => dispatch(setError(err)));
   }
 
 }
