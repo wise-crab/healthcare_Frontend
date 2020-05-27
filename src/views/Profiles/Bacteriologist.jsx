@@ -13,7 +13,6 @@ const Bacteriologist = ({ children, history }) => {
   return(
     <section className='' style={styles}>
       <Search />
-      <div className='main-content'>{children}</div>
     </section>
   );
 };

@@ -17,4 +17,4 @@ const Doctor = ({ children, history }) => {
     </section>
   );
 };
-export default withRouter(Doctor);
+export default Doctor;

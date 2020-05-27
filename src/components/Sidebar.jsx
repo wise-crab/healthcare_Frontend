@@ -7,19 +7,19 @@ import logo from "../assets/img/logo.png";
 const Sidebar = (props) => {
   const routes = {
     patient: [
-      { path: "/home", name: "Exams List", icon: "icon_name" },
+      { path: "/patient", name: "Exams List", icon: "icon_name" },
       { path: "#", name: "Exams Results", icon: "icon_name" },
     ],
     doctor: [
-      { path: "#", name: "Home", icon: "icon_name" },
+      { path: "/medic", name: "Home", icon: "icon_name" },
       { path: "#", name: "Patient List", icon: "icon_name" },
     ],
     bacteriologist: [
-      { path: "#", name: "Home", icon: "icon_name" },
+      { path: "/bacteriologist", name: "Home", icon: "icon_name" },
       { path: "#", name: "Patient List", icon: "icon_name" },
     ],
     admin: [
-      { path: "#", name: "Home", icon: "icon_name" },
+      { path: "/admin", name: "Home", icon: "icon_name" },
       { path: "#", name: "Users", icon: "icon_name" },
       { path: "#", name: "Create User", icon: "icon_name" },
       { path: "/bulk-data", name: "Bulky Upload", icon: "icon_name" },

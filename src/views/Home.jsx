@@ -25,9 +25,8 @@ class Home extends Component {
         {role == 'bacteriologist' && <Bacteriologist />} */}
       </section>
     );
-
   }
-};
+}
 
 // const mapStateToProps = (reducers) => {
 //   return  reducers.loginReducer;

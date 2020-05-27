@@ -85,6 +85,11 @@ label {
     padding-left: $two-u;
     padding-right: $two-u;
   }
+  &--icon {
+    @extend .button;
+    padding: 0;
+    width: 40px;
+  }
 }
 
 .card {
