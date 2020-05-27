@@ -7,9 +7,11 @@ export const loginRequest = payload => ({
 })
 
 export const loginUser = ({username, password}, redirect) => {
+  console.log(`username: ${username} \n password: ${password}`);
+  
   return (dispatch) => {
     axios({
-      url: '/auth/login',
+      url: 'http://localhost:3000/login',
       method: 'post',
       auth: {
         username,
@@ -26,4 +28,5 @@ export const loginUser = ({username, password}, redirect) => {
       })
       .catch(err => dispatch(setError(err)));
   }
+
 }
