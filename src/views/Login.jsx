@@ -7,7 +7,7 @@ const Login = () => {
     event.preventDefault();
   };
   return (
-    <>
+    <div className='login-card'>
       <h1>Sign In</h1>
       <section className='login card'>
         <section className='login__container'>
@@ -46,7 +46,7 @@ const Login = () => {
           </form>
         </section>
       </section>
-    </>
+    </div>
   );
 };
 export default Login;

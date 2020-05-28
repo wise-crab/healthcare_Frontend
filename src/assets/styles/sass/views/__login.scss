@@ -22,3 +22,18 @@
         }
     }
 }
+
+.login-card {
+    @media screen and(min-width: $tablet) {
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+    @media screen and(min-width: $laptop) {
+        padding-left: 25%;
+        padding-right: 25%;
+    }
+    @media screen and(min-width: $desktop) {
+        padding-left: 35%;
+        padding-right: 35%;
+    }
+}
