@@ -1,11 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import logo from '../assets/img/Brand-icon-horizontal.png';
+import { loginUser } from '../actions/loginActions';
 import '../assets/styles/sass/views/__login.scss';
 
-const Login = () => {
+const Login = (props) => {
+  const [form, setValues] = useState({
+    username: '',
+    role: '',
+  });
+
+  const updateInput = (event) => {
+    setValues({
+      ...form,
+      [event.target.name]: event.target.value,
+    });
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
+    props.loginUser(form);
   };
+
   return (
     <div className='login-card'>
       <h1>Sign In</h1>
@@ -22,6 +39,7 @@ const Login = () => {
               className='input'
               type='text'
               placeholder='Username'
+              required
             />
             <label htmlFor='password'>Contraseña</label>
             <input
@@ -30,6 +48,7 @@ const Login = () => {
               className='input'
               type='password'
               placeholder='Password'
+              required
             />
             <div className='login__container-remember-me'>
               <label>
@@ -49,4 +68,13 @@ const Login = () => {
     </div>
   );
 };
-export default Login;
+
+const mapDispatchToProps = {
+  loginUser,
+};
+
+Login.propTypes = {
+  loginUser: PropTypes.func,
+};
+
+export default connect(null, mapDispatchToProps)(Login);

@@ -1,8 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import '../../assets/styles/sass/components/_main.scss';
-import Sidebar from '../Sidebar';
-import Form from '../Form';
+import Sidebar from '../../components/Sidebar'
+import Form from '../../components/Form'
 
 const Admin = () => {
   return <section className=''></section>;

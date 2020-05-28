@@ -1,5 +1,5 @@
 const INITIAL_STATE = {
-  users: [
+  patient: [
     {
       $oid: '5ec6c34efc13ae0f3a00002c',
       cdi: '0129194190',
