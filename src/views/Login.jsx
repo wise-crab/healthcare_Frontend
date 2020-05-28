@@ -7,38 +7,46 @@ const Login = () => {
     event.preventDefault();
   };
   return (
-    <section className='login'>
-      <section className='login__container'>
-        <h2>Sign In</h2>
-        <div className='login__container-logo'>
-          <img src={logo} />
-        </div>
-        <form className='login__container-form' onSubmit={handleSubmit}>
-          <input
-            name='username'
-            className='input'
-            type='text'
-            placeholder='Username'
-          />
-          <input
-            name='password'
-            className='input'
-            type='password'
-            placeholder='Password'
-          />
-          <div className='login__container-remember-me'>
-            <label>
-              <input type='checkbox' id='cbox1' value='first_checkbox' />
-              Remember me
-            </label>
-            <a href='/'>Forgot the password</a>
+    <>
+      <h1>Sign In</h1>
+      <section className='login card'>
+        <section className='login__container'>
+          <div className='login__container-logo'>
+            <img src={logo} alt='logo' />
           </div>
-          <button className='button' type='submit'>
-            LOGIN
-          </button>
-        </form>
+          <form className='login__container-form' onSubmit={handleSubmit}>
+            <label htmlFor='username'>Nombre de usuario</label>
+            <input
+              id='username'
+              name='username'
+              className='input'
+              type='text'
+              placeholder='Username'
+            />
+            <label htmlFor='password'>Contraseña</label>
+            <input
+              id='password'
+              name='password'
+              className='input'
+              type='password'
+              placeholder='Password'
+            />
+            <div className='login__container-remember-me'>
+              <label>
+                <input type='checkbox' id='cbox1' value='first_checkbox' />
+                Remember me
+              </label>
+              <a href='/' id='forgot'>
+                Forgot password
+              </a>
+            </div>
+            <button className='button' type='submit'>
+              Login
+            </button>
+          </form>
+        </section>
       </section>
-    </section>
+    </>
   );
 };
 export default Login;

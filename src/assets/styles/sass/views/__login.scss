@@ -1,0 +1,24 @@
+@import '../styles.scss';
+
+.login {
+    &__container {
+        &-logo {
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: center;
+        }
+
+        &-remember-me {
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: space-between;
+            input {
+                margin-right: $half-u;
+            }
+        }
+
+        button[type='submit'] {
+            margin-bottom: $one-u;
+        }
+    }
+}
