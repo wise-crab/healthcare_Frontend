@@ -1,18 +1,19 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import Search from '../../components/Search'
 import '../../assets/styles/sass/components/_main.scss';
-import Sidebar from '../Sidebar'
-import Form from '../Form'
+import Sidebar from '../../components/Sidebar'
 
-const Admin = ({ children, history }) => {
+const Bacteriologist = ({ children, history }) => {
   let styles = {};
   if (history.location.pathname === '/') {
     styles = { marginLeft: '0' };
   }
+
   return(
     <section className='' style={styles}>
-      <Form className='main-content'/>
+      <Search />
     </section>
   );
 };
-export default withRouter(Admin);
+export default withRouter(Bacteriologist);
