@@ -1,5 +1,6 @@
 import React from 'react';
 import '../assets/styles/sass/components/_table.scss';
+import Checkbox from './Checkbox';
 
 const Table = ({ data }) => {
   const titles = Object.keys(data[0]);
@@ -20,7 +21,9 @@ const Table = ({ data }) => {
 
             return (
               <tr key={idx}>
-                <td>Select</td>
+                <td>
+                  <Checkbox text=' ' value={item.$oid} />
+                </td>
                 <td>{item.type}</td>
                 <td>{date}</td>
                 <td>{item.$oid}</td>
