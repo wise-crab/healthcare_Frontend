@@ -22,6 +22,7 @@ const Search = (props) => {
     event.preventDefault();
     props.getPatient(form)
   }
+  debugger
   return (
     <section >
       <form className='search' id='search-component' onSubmit={handleSearch}>
@@ -43,7 +44,7 @@ const Search = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    patient: state.patient,
+    patient: state.doctorReducer,
   }
 }
 

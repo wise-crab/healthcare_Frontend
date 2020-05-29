@@ -9,35 +9,16 @@ export const getPatientsList = payload => ({
   payload: payload,
 });
 
-export const listFromURL = () => {
-  return (dispatch) =>{
-    const token = getCookie('jwt')
-    
-    axios(
-      patientsList,
-      {headers: { Authorization: `Bearer ${token}` }}
-      ).then(({data}) =>{
-      console.log(`data= ${data.data}`);
-      dispatch(getPatientsList(data.data))
-      }
-    )
-      
 
-  }
-};
 
 export const getPatient = ({id}) => {
   
-  return (dispatch)=> {
+  return async (dispatch)=> {
   dispatch({
     type: LOADING
   });
   const URL = `${getUser}${id}`
   const token = getCookie('jwt')
-  searchPatient(URL,token);
-}}
-
-export const searchPatient = async (URL,token) => {
   try {
     const res = await axios.get(URL,{
       headers: { Authorization: `Bearer ${token}` }
@@ -46,11 +27,13 @@ export const searchPatient = async (URL,token) => {
       type: SEARCH_PATIENT,
       payload: res.data
     })
+    
+    
+
   } catch (err) {
     dispatch({
       type: ERROR,
       payload: err.message
     });
   }
-  
-}
+}}
