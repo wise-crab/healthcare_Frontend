@@ -6,6 +6,8 @@ import Admin from './Profiles/Admin';
 import Bacteriologist from './Profiles/Bacteriologist';
 import * as loginUser from '../actions/loginActions';
 
+import getCookie from '../functions/getCookie'
+
 class Home extends Component {
   componentDidMount(){
     this.props
@@ -15,14 +17,14 @@ class Home extends Component {
     console.log(this);
     
     
-    // const role = this.props.patient[0].role;
+    const role = getCookie('role');
     
     return (
       <section className='doctor card'>
-        {/* {role == 'patient' && <Patient />}
+        {role == 'patient' && <Patient />}
         {role == 'doctor' && <Doctor />}
         {role == 'admin' && <Admin />}
-        {role == 'bacteriologist' && <Bacteriologist />} */}
+        {role == 'bacteriologist' && <Bacteriologist />}
       </section>
     );
   }

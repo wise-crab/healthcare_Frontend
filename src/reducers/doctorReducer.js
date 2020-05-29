@@ -1,3 +1,5 @@
+import { ADD_EXAM, SEARCH_PATIENT, GET_EXAMS_BY_PATIENT } from '../types/doctorTypes';
+
 const INITIAL_STATE = {
   patient: [
     {
@@ -12,12 +14,12 @@ const INITIAL_STATE = {
   ],
 };
 
-export default (state = INITIAL_STATE, action) => {
+export default (state= INITIAL_STATE, action) =>{
   switch (action.type) {
-    case 'GET_USER':
-      return { ...state, users: action.payload };
-
+    case SEARCH_PATIENT:
+      break;
+  
     default:
       return state;
   }
-};
+}

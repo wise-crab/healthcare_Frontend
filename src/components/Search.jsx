@@ -1,6 +1,6 @@
 import React, { useState, useMemo} from 'react';
 import { connect } from "react-redux";
-import { getPatientsList } from '../actions/patientsActions'
+import { getPatientsList } from '../actions/doctorActions'
 import '../assets/styles/sass/components/_search.scss';
 
 
@@ -20,10 +20,12 @@ const useSearchPatients = (patients) => {
 }
 
 const Search = (props) => {
-  const patients = props.getPatientsList();
-  console.log(patients);
+  const patients = props.listFromURL();
+  console.log(props);
   
-  // const placeholder = `enter the patient ID or name`;
+  console.log(`paciente = ${patients}`);
+  // debugger;
+  const placeholder = `enter the patient ID or name`;
   // const { query, setQuery, filteredPatients } = useSearchPatients(patients);
 
   // if (filteredPatients.length === 0) {

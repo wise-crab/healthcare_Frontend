@@ -4,13 +4,15 @@ import { withRouter } from "react-router-dom";
 import "../assets/styles/sass/components/_sidebar.scss";
 import logo from "../assets/img/logo.png";
 
+import getCookie from '../functions/getCookie'
+
 const Sidebar = (props) => {
   const routes = {
     patient: [
       { path: "/patient", name: "Exams List", icon: "icon_name" },
       { path: "#", name: "Exams Results", icon: "icon_name" },
     ],
-    doctor: [
+    medic: [
       { path: "/medic", name: "Home", icon: "icon_name" },
       { path: "#", name: "Patient List", icon: "icon_name" },
     ],
@@ -25,8 +27,7 @@ const Sidebar = (props) => {
       { path: "/bulk-data", name: "Bulky Upload", icon: "icon_name" },
     ],
   };
-
-  const role = props.patient[0].role;
+  const role = getCookie('role');
   const options = routes[role];
 
   function isCurrentRoute(route) {
