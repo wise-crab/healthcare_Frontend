@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState , useMemo } from "react";
 import { connect } from "react-redux";
 import Tracker from "./Tracker";
 import "../assets/styles/sass/components/_table.scss";

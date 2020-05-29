@@ -1,22 +1,28 @@
-import { getUserByID, examsList } from '../APIS/apis';
+import { patientsList } from '../APIS/apis';
+import axios from 'axios';
 import { GET_EXAMS_LIST } from '../types/examsTypes';
 
-export const getUsersList = () => async (dispatch) => {
-  const users = await fetch(getUserByID);
-  dispatch({
-    type: 'GET_USERS_LIST',
-    payload: users.data,
-  })
-};
-
-export const getExamsList = () => async (dispatch) => {
-  try {
-    const exams = await fetch(examsList);
-    dispatch({
-      type: GET_EXAMS_LIST,
-      payload: exams.data
+export const getPatientsList = () => {
+  return (dispatch) =>{
+    axios(patientsList).then(({data}) =>{
+      console.log(data);
+      
     })
-  } catch (err) {
-    console.error(err.message);
+    // type: 'GET_PATIENT_LIST',
+    // payload: patients.data,
   }
 };
+
+// export const getPatientByID = () => async (dispatch) => {
+//   try {
+//     const exams = await fetch(patientsList);
+//     console.log(exams);
+    
+//     dispatch({
+//       type: GET_EXAMS_LIST,
+//       payload: exams.data
+//     })
+//   } catch (err) {
+//     console.error(err.message);
+//   }
+// };

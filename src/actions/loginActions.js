@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { loginURL } from '../APIS/apis'
 
 export const loginRequest = payload => {
   console.log(payload);
@@ -12,7 +13,7 @@ export const loginRequest = payload => {
 export const loginUser = ({username, password}) => {
     
   return (dispatch) => {
-    axios.post('http://localhost:3000/login', {
+    axios.post(loginURL, {
       username,
       password,
     })
