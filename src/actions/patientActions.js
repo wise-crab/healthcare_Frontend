@@ -1,0 +1,1 @@
+import { GET_EXAMS, DOWNLOAD_RESULTS } from '../types/patientTypes'

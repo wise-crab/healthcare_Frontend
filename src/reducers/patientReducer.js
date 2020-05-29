@@ -1,3 +1,5 @@
+import { GET_EXAMS, DOWNLOAD_RESULTS } from '../types/patientTypes'
+
 const INITIAL_STATE = {
   patient: [
     {
@@ -16,6 +18,9 @@ export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case 'GET_USER':
       return { ...state, users: action.payload };
+
+    case 'GET_PATIENT_LIST':
+      return { ...state, patients: action.payload };
 
     default:
       return state;
