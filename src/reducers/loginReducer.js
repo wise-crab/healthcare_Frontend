@@ -1,5 +1,5 @@
 const initialState = {
-  role: 'patient',
+  role: 'admin',
   name: 'user name',
   type: 'Loading',
 };
