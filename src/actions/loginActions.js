@@ -16,10 +16,11 @@ export const loginUser = ({ username, password, history }) => {
         password,
       })
       .then(({ data }) => {
-        document.cookie = `role=${data.data.userRol}`;
+        const role = data.data.userData.rol;
+        document.cookie = `role=${role}`;
         document.cookie = `token=${data.data.token}`;
-        const redirect = `/${data.data.userRol}`;
-        dispatch(loginRequest(data.data));
+        const redirect = `/${role}`;
+        dispatch(loginRequest(data.data.userData));
         history.push(redirect);
       })
       .then(() => {})
