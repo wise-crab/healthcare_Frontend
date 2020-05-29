@@ -1,18 +1,22 @@
+// server Domain
+const serverIP = `http://192.168.0.16:3000`
+
 //Users
-const getUsersList = 'https://data-mock-278118.wl.r.appspot.com/api/users';
-const getUserByID = 'https://data-mock-278118.wl.r.appspot.com/api/users/ID';
+const getUsersList = `https://data-mock-278118.wl.r.appspot.com/api/users`;
+const getUserByID = `https://data-mock-278118.wl.r.appspot.com/api/users/ID`;
 
 //Exams
-const examsList = 'https://data-mock-278118.wl.r.appspot.com/api/exams';
-const getExamByID = 'https://data-mock-278118.wl.r.appspot.com/api/exams/ID';
+const examsList = `https://data-mock-278118.wl.r.appspot.com/api/exams`;
+const getExamByID = `https://data-mock-278118.wl.r.appspot.com/api/exams/ID`;
+const examsByPatientURL = `${serverIP}/types-exams/`
 
-const patientsList = 'http://localhost:3000/users-rol?rol=patient'
-const loginURL = 'http://localhost:3000/login'
-const listUsers = 'http://localhost:3000/users'
-const getUser = 'http://localhost:3000/users/user?document='
+const patientsList = `${serverIP}/users-rol?rol=patient`
+const loginURL = `${serverIP}/login`
+const listUsers = `${serverIP}/users`
+const getUser = `${serverIP}/users/user?document=`
 const createUser = listUsers;
 const updateUser = listUsers;
-const csvUpload = 'http://localhost:3000/users-csv';
+const csvUpload = `${serverIP}/users-csv`;
 
 
 
@@ -27,4 +31,5 @@ module.exports = {
   createUser,
   updateUser,
   csvUpload,
+  examsByPatientURL,
 };
