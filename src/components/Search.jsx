@@ -22,23 +22,38 @@ const Search = (props) => {
     event.preventDefault();
     props.getPatient(form)
   }
-  debugger
-  return (
-    <section >
-      <form className='search' id='search-component' onSubmit={handleSearch}>
-        <input
-          name='id'
-          onChange={updateInput}
-          type='text'
-          className='input'
-          placeholder={placeholder}
-        />
-        <button className='button--icon' type='submit'>
-          <i className='fa fa-search'></i>
-        </button>
-      </form>
-    </section>
-  );
+  
+  const patient = props.patient.patient
+
+  const renderPatient = (object) =>{
+    let row = '';
+    for (const prop in object) {
+      row += object[prop];
+    }
+    return row
+          
+  }
+
+    return (
+      <section >
+        <form className='search' id='search-component' onSubmit={handleSearch}>
+          <input
+            name='id'
+            onChange={updateInput}
+            type='text'
+            className='input'
+            placeholder={placeholder}
+          />
+          <button className='button--icon' type='submit'>
+            <i className='fa fa-search'></i>
+          </button>
+        </form>
+        {
+            (patient !== null) && renderPatient(patient)
+        }
+      </section>
+    );
+
   
 };
 

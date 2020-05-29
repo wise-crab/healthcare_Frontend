@@ -11,8 +11,7 @@ export const getPatientsList = payload => ({
 
 
 
-export const getPatient = ({id}) => {
-  
+export const getPatient = ({id}) => { 
   return async (dispatch)=> {
   dispatch({
     type: LOADING
@@ -25,11 +24,8 @@ export const getPatient = ({id}) => {
     });
     dispatch({
       type: SEARCH_PATIENT,
-      payload: res.data
+      payload: res.data.data
     })
-    
-    
-
   } catch (err) {
     dispatch({
       type: ERROR,
