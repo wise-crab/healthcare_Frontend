@@ -14,7 +14,7 @@ const Doctor = ({ children, history }) => {
   
   return(
     <section className='' style={styles}>
-      <Search func={getPatient}/>
+      <Search />
       <div className='main-content'>{children}</div>
     </section>
   );

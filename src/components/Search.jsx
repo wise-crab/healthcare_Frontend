@@ -1,68 +1,54 @@
 import React, { useState, useMemo} from 'react';
 import { connect } from "react-redux";
-import { getPatientsList } from '../actions/doctorActions'
+import { getPatient } from '../actions/doctorActions'
 import '../assets/styles/sass/components/_search.scss';
 
-
-
-const useSearchPatients = (patients) => {
-  const [query, setQuery] = useState('');
-  const [filteredPatients, setfilteredPatients] = useState(patients);
-
-  useMemo(() =>{
-    const result = patients.filter(patient => {
-      return `${patient}`
-    });
-
-    setfilteredPatients(result);
-  },[patients,query]);
-  return { query, setQuery, filteredPatients };
-}
-
 const Search = (props) => {
-  // const patients = props.;
-  console.log(props);
   
-  console.log(`paciente = ${patients}`);
-  // debugger;
   const placeholder = `enter the patient ID or name`;
-  // const { query, setQuery, filteredPatients } = useSearchPatients(patients);
+  
+  const [form, setValues] = useState({
+    searchField:''
+  })
 
-  // if (filteredPatients.length === 0) {
-    // return (
-    //   <section className='search' id='search-component'>
-    //     <input 
-    //       type='text'
-    //       className='form-control'
-    //       placeholder={placeholder}
-    //       value = {query}
-    //       onChange={ e => {
-    //         setQuery(e.target.value);
-    //       }}
-    //     />
-    //     <button className='button--icon'>
-    //       <i className='fa fa-search'></i>
-    //     </button>
-    //     <h3> No patients were Found </h3>
-    //   </section>
+  const updateInput = (event) => {
+    setValues({
+      ...form,
+      [event.target.name]: event.target.value
+    })
+  }
 
-    // );
-  // }
+  const handleSearch = (event) => {
+    event.preventDefault();
+    props.getPatient(form)
+  }
   return (
-    <div className='PatientList'>
-
-    </div>
-  )
+    <section >
+      <form className='search' id='search-component' onSubmit={handleSearch}>
+        <input
+          name='id'
+          onChange={updateInput}
+          type='text'
+          className='input'
+          placeholder={placeholder}
+        />
+        <button className='button--icon' type='submit'>
+          <i className='fa fa-search'></i>
+        </button>
+      </form>
+    </section>
+  );
+  
 };
 
 const mapStateToProps = (state) => {
   return {
-    patients: state.patients,
+    patient: state.patient,
   }
 }
 
 const mapDispatchToProps = {
-  getPatientsList,
+  getPatient,
 };
 
 export default connect (mapStateToProps,mapDispatchToProps)(Search);

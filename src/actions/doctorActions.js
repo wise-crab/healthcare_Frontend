@@ -12,7 +12,6 @@ export const getPatientsList = payload => ({
 export const listFromURL = () => {
   return (dispatch) =>{
     const token = getCookie('jwt')
-    console.log(token);
     
     axios(
       patientsList,
@@ -27,11 +26,18 @@ export const listFromURL = () => {
   }
 };
 
-export const getPatient = (id) => async (dispatch) => {
+export const getPatient = ({id}) => {
+  
+  return (dispatch)=> {
   dispatch({
     type: LOADING
   });
   const URL = `${getUser}${id}`
+  const token = getCookie('jwt')
+  searchPatient(URL,token);
+}}
+
+export const searchPatient = async (URL,token) => {
   try {
     const res = await axios.get(URL,{
       headers: { Authorization: `Bearer ${token}` }
@@ -43,8 +49,8 @@ export const getPatient = (id) => async (dispatch) => {
   } catch (err) {
     dispatch({
       type: ERROR,
-      payload: error.message
-      
+      payload: err.message
     });
   }
-};
+  
+}
