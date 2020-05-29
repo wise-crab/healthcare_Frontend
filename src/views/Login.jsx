@@ -1,27 +1,26 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import logo from '../assets/img/Brand-icon-horizontal.png';
 import { loginUser } from '../actions/loginActions';
 import '../assets/styles/sass/views/__login.scss';
 
 const Login = (props) => {
+  const [form, setValues] = useState({
+    username: '',
+    role: '',
+  });
 
-  const [form,setValues] = useState({
-    username:'',
-    role: ''
-  })
-
-  const updateInput = event => {
+  const updateInput = (event) => {
     setValues({
       ...form,
-      [event.target.name]: event.target.value
-    })
-  }
+      [event.target.name]: event.target.value,
+    });
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    props.loginUser(form)
+    props.loginUser({ ...form, history: props.history });
   };
 
   return (
@@ -63,10 +62,10 @@ const Login = (props) => {
 
 const mapDispatchToProps = {
   loginUser,
-}
+};
 
 Login.propTypes = {
   loginUser: PropTypes.func,
-}
+};
 
 export default connect(null, mapDispatchToProps)(Login);
