@@ -26,12 +26,14 @@ const Search = (props) => {
   const patient = props.patient.patient
 
   const renderPatient = (object) =>{
-    let row = '';
-    for (const prop in object) {
-      row += object[prop];
-    }
-    return row
-          
+    return (
+      <>
+        <div>{object.numberId}</div>
+        <div>{object.name}</div>
+        <div>{object.lastName}</div>
+        <div>{object.email}</div>
+      </>
+    )        
   }
 
     return (
