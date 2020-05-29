@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import logo from '../assets/img/Brand-icon-horizontal.png';
-import { loginUser } from '../actions/loginActions';
+import { loginUser } from '../actions/authActions';
 import '../assets/styles/sass/views/__login.scss';
 
 const Login = (props) => {

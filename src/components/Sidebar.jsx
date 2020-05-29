@@ -3,6 +3,9 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import "../assets/styles/sass/components/_sidebar.scss";
 import logo from "../assets/img/logo.png";
+import * as reducers from '../reducers/index'
+
+import getCookie from '../functions/getCookie'
 
 const Sidebar = (props) => {
   const routes = {
@@ -10,13 +13,13 @@ const Sidebar = (props) => {
       { path: "/patient", name: "Exams List", icon: "icon_name" },
       { path: "#", name: "Exams Results", icon: "icon_name" },
     ],
-    doctor: [
+    medic: [
       { path: "/medic", name: "Home", icon: "icon_name" },
-      { path: "#", name: "Patient List", icon: "icon_name" },
+      { path: "#", name: "Patients List", icon: "icon_name" },
     ],
     bacteriologist: [
       { path: "/bacteriologist", name: "Home", icon: "icon_name" },
-      { path: "#", name: "Patient List", icon: "icon_name" },
+      { path: "#", name: "Patients List", icon: "icon_name" },
     ],
     admin: [
       { path: "/admin", name: "Home", icon: "icon_name" },
@@ -25,8 +28,7 @@ const Sidebar = (props) => {
       { path: "/bulk-data", name: "Bulky Upload", icon: "icon_name" },
     ],
   };
-
-  const role = props.patient[0].role;
+  const role = getCookie('role');
   const options = routes[role];
 
   function isCurrentRoute(route) {
@@ -59,7 +61,7 @@ const Sidebar = (props) => {
 };
 
 const mapStateToProps = (reducers) => {
-  return reducers.patientsReducer;
+  return reducers;
 };
 
-export default connect(mapStateToProps)(withRouter(Sidebar));
+export default withRouter(connect(mapStateToProps, null)(Sidebar));

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState , useMemo } from "react";
 import { connect } from "react-redux";
 import Tracker from "./Tracker";
 import "../assets/styles/sass/components/_table.scss";
@@ -76,7 +76,6 @@ const activateLasers = (stepCount) => {
       if (step === 1) {	
         step = 2;	
         console.log(step1);
-        debugger
         step1.classList.remove("is-active");	
         step1.classList.add("is-complete");	
         step2.classList.add("is-active");	
