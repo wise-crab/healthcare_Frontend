@@ -1,12 +1,11 @@
-import { patientsList } from '../APIS/apis';
+import { patientsList, getUser} from '../APIS/apis';
 import axios from 'axios';
 import getCookie from '../functions/getCookie'
 import { ADD_EXAM, SEARCH_PATIENT, GET_EXAMS_BY_PATIENT } from '../types/doctorTypes'
-
-// axios.defaults.withCredentials = true;
+import { ERROR, LOADING } from '../types/asyncTypes'
 
 export const getPatientsList = payload => ({
-  type: 'GET_PATIENT_LIST',
+  type: GET_EXAMS_BY_PATIENT,
   payload: payload,
 });
 
@@ -19,7 +18,7 @@ export const listFromURL = () => {
       patientsList,
       {headers: { Authorization: `Bearer ${token}` }}
       ).then(({data}) =>{
-      console.log(data);
+      console.log(`data= ${data.data}`);
       dispatch(getPatientsList(data.data))
       }
     )
@@ -28,16 +27,24 @@ export const listFromURL = () => {
   }
 };
 
-// export const getPatientByID = () => async (dispatch) => {
-//   try {
-//     const exams = await fetch(patientsList);
-//     console.log(exams);
-    
-//     dispatch({
-//       type: GET_EXAMS_LIST,
-//       payload: exams.data
-//     })
-//   } catch (err) {
-//     console.error(err.message);
-//   }
-// };
+export const getPatient = (id) => async (dispatch) => {
+  dispatch({
+    type: LOADING
+  });
+  const URL = `${getUser}${id}`
+  try {
+    const res = await axios.get(URL,{
+      headers: { Authorization: `Bearer ${token}` }
+    });
+    dispatch({
+      type: SEARCH_PATIENT,
+      payload: res.data
+    })
+  } catch (err) {
+    dispatch({
+      type: ERROR,
+      payload: error.message
+      
+    });
+  }
+};

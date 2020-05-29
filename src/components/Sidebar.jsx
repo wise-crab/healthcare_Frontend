@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import "../assets/styles/sass/components/_sidebar.scss";
 import logo from "../assets/img/logo.png";
+import * as reducers from '../reducers/index'
 
 import getCookie from '../functions/getCookie'
 
@@ -14,11 +15,11 @@ const Sidebar = (props) => {
     ],
     medic: [
       { path: "/medic", name: "Home", icon: "icon_name" },
-      { path: "#", name: "Patient List", icon: "icon_name" },
+      { path: "#", name: "Patients List", icon: "icon_name" },
     ],
     bacteriologist: [
       { path: "/bacteriologist", name: "Home", icon: "icon_name" },
-      { path: "#", name: "Patient List", icon: "icon_name" },
+      { path: "#", name: "Patients List", icon: "icon_name" },
     ],
     admin: [
       { path: "/admin", name: "Home", icon: "icon_name" },
@@ -60,7 +61,7 @@ const Sidebar = (props) => {
 };
 
 const mapStateToProps = (reducers) => {
-  return reducers.patientsReducer;
+  return reducers;
 };
 
-export default connect(mapStateToProps)(withRouter(Sidebar));
+export default withRouter(connect(mapStateToProps, null)(Sidebar));

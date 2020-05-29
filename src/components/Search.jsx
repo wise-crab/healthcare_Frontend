@@ -20,7 +20,7 @@ const useSearchPatients = (patients) => {
 }
 
 const Search = (props) => {
-  const patients = props.listFromURL();
+  // const patients = props.;
   console.log(props);
   
   console.log(`paciente = ${patients}`);
