@@ -24,7 +24,7 @@ export default (
 ) => {
   switch (action.type) {
     case LOGIN_REQUEST:
-      return { ...action.payload, role: action.payload.rol };
+      return { ...state, user: action.payload };
     default:
       return state;
   }

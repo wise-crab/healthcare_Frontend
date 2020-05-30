@@ -6,9 +6,7 @@ import { loginUser } from '../actions/authActions';
 import '../assets/styles/sass/views/__login.scss';
 
 const Login = (props) => {
-  useEffect(() => {
-    props.user.role !== null && props.history.push(`/${props.user.role}`);
-  });
+  debugger
 
   const [form, setValues] = useState({
     username: '',
@@ -61,9 +59,6 @@ const Login = (props) => {
                 <input type='checkbox' id='cbox1' value='first_checkbox' />
                 Remember me
               </label>
-              <a href='/' id='forgot'>
-                Forgot password
-              </a>
             </div>
             <button className='button' type='submit'>
               Login
@@ -78,6 +73,10 @@ const Login = (props) => {
 const mapDispatchToProps = {
   loginUser,
 };
+
+Login.propTypes = {
+  loginUser: PropTypes.func,
+}
 
 const mapStateToProps = (state) => {
   return {

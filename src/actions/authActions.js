@@ -18,7 +18,8 @@ export const loginUser = ({ username, password, history }) => {
         password,
       })
       .then(({ data }) => {
-        const role = data.data.userData.rol;
+        debugger
+        const role = data.data.userRol;
         document.cookie = `role=${role}`;
         document.cookie = `token=${data.data.token}`;
         const redirect = `/${role}`;

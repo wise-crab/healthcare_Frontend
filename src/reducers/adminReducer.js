@@ -6,7 +6,7 @@ const INITIAL_STATE = {
 
 export default (state= INITIAL_STATE, action) =>{
   switch (action.type) {
-    case GET_USERS:
+    case ADD_USER:
       break;
   
     default:
