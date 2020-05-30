@@ -1,10 +1,12 @@
-import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import routes from '../routes/index';
 
 const ProtectedRoute = ({ component: Component, ...rest }) => {
-  let currentRole = rest.user.role;
+  rest.user.role == null && rest.history.push('/');
+
+  let currentRole = rest.user.role || 'patient';
   let currentRoutes = routes[currentRole];
   let hasAccess = false;
   const allowAccess = () => {
@@ -43,4 +45,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(ProtectedRoute);
+export default connect(mapStateToProps)(withRouter(ProtectedRoute));
