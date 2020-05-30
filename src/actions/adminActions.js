@@ -1,21 +1,20 @@
 import axios from 'axios';
-import { getUser } from '../APIS/apis';
+import { csvUpload } from '../APIS/apis';
 import { CSV_UPLOAD, CSV_UPLOAD_SUCESS } from '../types/adminTypes';
 
-const uploadUsers = ({ data }) => {
+const uploadUsers = (data, history) => {
   return async (dispatch) => {
     dispatch({
       type: CSV_UPLOAD,
     });
-    const URL = `${getUser}${id}`;
-    const token = getCookie('jwt');
+    console.log(data);
+    const URL = `${csvUpload}`;
     try {
-      await axios.post(URL, data, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      await axios.post(URL, data);
       dispatch({
         type: CSV_UPLOAD_SUCESS,
       });
+      history.push('/');
     } catch (err) {
       dispatch({
         type: ERROR,

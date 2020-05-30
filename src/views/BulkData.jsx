@@ -8,7 +8,7 @@ import csv from 'csv';
 import uploadUsers from '../actions/adminActions';
 import DynamicTable from '../components/DynamicTable';
 
-function BulkData() {
+function BulkData(props) {
   const [dataUpload, setDataUpload] = useState(0);
 
   const uploadUsersData = (files) => {
@@ -21,6 +21,14 @@ function BulkData() {
       });
     };
     reader.readAsBinaryString(files[0]);
+  };
+
+  const uploadDataServer = () => {
+    console.log(dataUpload);
+    const data = {
+      users: dataUpload,
+    };
+    props.uploadUsers(data, props.history);
   };
 
   return (
@@ -38,7 +46,7 @@ function BulkData() {
         {dataUpload.length > 0 && (
           <>
             <DynamicTable data={dataUpload} />
-            <button onClick={uploadUsersData} type='button'>
+            <button onClick={uploadDataServer} type='button'>
               Cargar Archivo
             </button>
           </>
