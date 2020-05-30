@@ -4,7 +4,7 @@ const initialState = {
   $oid: '5ec6c34efc13ae0f3a00002c',
   cdi: '0129194190',
   name: 'Petrina',
-  last_name: 'Causbey',
+  lastName: 'Causbey',
   email: 'pcausbey4@tinyurl.com',
   phone: '142-427-3406',
   role: 'patient',

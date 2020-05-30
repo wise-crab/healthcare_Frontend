@@ -5,6 +5,7 @@ import bacteriologistReducer from './bacteriologistReducer';
 import adminReducer from './adminReducer';
 import doctorReducer from './doctorReducer';
 import loginReducer from './loginReducer';
+import sidebar from './sidebar';
 
 export default combineReducers({
   patientReducer,
@@ -13,4 +14,5 @@ export default combineReducers({
   doctorReducer,
   bacteriologistReducer,
   loginReducer,
+  sidebar,
 });

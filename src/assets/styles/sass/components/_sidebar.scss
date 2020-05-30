@@ -30,6 +30,17 @@
       font-size: $one-u-h;
     }
   }
+  &__profile {
+    display: flex;
+    align-items: center;
+    padding: $one-u $two-u $half-u $two-u;
+    img {
+      width: 40px;
+      margin-right: $half-u;
+      border-radius: 50%;
+      box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+    }
+  }
 
   &__menu {
     padding: $one-u;
@@ -43,6 +54,9 @@
       @extend .font-bold;
       &:hover {
         background-color: rgba(0, 0, 0, 0.2);
+      }
+      i {
+        font-size: 24px;
       }
 
       a {
@@ -64,4 +78,8 @@
       }
     }
   }
+}
+
+.sidebar.open {
+  left: 0 !important;
 }
