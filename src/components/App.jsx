@@ -5,7 +5,7 @@ import Login from '../views/Login';
 import Admin from '../views/Profiles/Admin';
 import Doctor from '../views/Profiles/Doctor';
 import Patient from '../views/Profiles/Patient';
-import Bacteriologist from '../views/Profiles/Admin';
+import Bacteriologist from '../views/Profiles/Bacteriologist';
 import Layout from '../views/Layout';
 import Profile from '../views/Profile';
 import CreateUser from '../views/CreateUser';
@@ -31,7 +31,7 @@ const App = () => {
           <ProtectedRoute exact path='/create-user' component={CreateUser} />
           <ProtectedRoute exact path='/bulk-data' component={BulkData} />
           <ProtectedRoute exact path='/update-user' component={UpdateUser} />
-          <Route component component={NotFound} />
+          <Route component={NotFound} />
         </Switch>
       </Layout>
     </BrowserRouter>

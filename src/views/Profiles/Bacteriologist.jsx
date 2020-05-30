@@ -1,8 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import Search from '../../components/Search'
+import Search from '../../components/Search';
 import '../../assets/styles/sass/components/_main.scss';
-import Sidebar from '../../components/Sidebar'
 
 const Bacteriologist = ({ children, history }) => {
   let styles = {};
@@ -10,7 +9,7 @@ const Bacteriologist = ({ children, history }) => {
     styles = { marginLeft: '0' };
   }
 
-  return(
+  return (
     <section className='' style={styles}>
       <Search />
     </section>

@@ -36,7 +36,9 @@ const Profile = (props) => (
         name='new_password_confirm'
         placeholder='confirmar contraseña'
       />
-      <button className='button'>Actualizar</button>
+      <button className='button' type='submit'>
+        Actualizar
+      </button>
     </form>
   </div>
 );

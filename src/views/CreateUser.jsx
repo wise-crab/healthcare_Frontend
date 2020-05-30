@@ -75,7 +75,9 @@ const CreateUser = () => {
             </select>
           </div>
         </div>
-        <button className='button'>Guardar</button>
+        <button className='button' type='submit'>
+          Guardar
+        </button>
       </section>
     </>
   );

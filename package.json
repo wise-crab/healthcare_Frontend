@@ -9,7 +9,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "json-server --watch --host 0.0.0.0 api.json",
     "start": "npm-run-all client server -p",
-    "lint": "eslint ./src/ --ext .js --ext .jsx --fix"
+    "lint": "eslint ./src/ --ext .js --ext .jsx --fix",
+    "format": "prettier --write {*.js,src/**/*.{js,jsx}}"
   },
   "repository": {
     "type": "git",
@@ -56,15 +57,19 @@
     "eslint": "^7.0.0",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.20.0",
     "file-loader": "^6.0.0",
     "html-loader": "^1.1.0",
     "html-webpack-plugin": "^4.3.0",
+    "husky": "^4.2.5",
     "jest": "^26.0.1",
     "json-server": "^0.16.1",
+    "lint-staged": "^10.2.7",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.14.1",
     "npm-run-all": "^4.1.5",
+    "prettier": "^2.0.5",
     "sass-loader": "^8.0.2",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
@@ -77,5 +82,17 @@
     "moduleNameMapper": {
       "\\.(jp|jpeg|png|gif)$": "<rootDir>/src/__mocks__/fileMock.js"
     }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "npm run format",
+      "npm run lint",
+      "git add"
+    ]
   }
 }
