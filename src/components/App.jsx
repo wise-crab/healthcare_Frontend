@@ -11,6 +11,7 @@ import Profile from '../views/Profile';
 import CreateUser from '../views/CreateUser';
 import BulkData from '../views/BulkData';
 import NotFound from '../views/NotFound';
+import UpdateUser from './UpdateUser';
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
           <ProtectedRoute exact path='/profile' component={Profile} />
           <ProtectedRoute exact path='/create-user' component={CreateUser} />
           <ProtectedRoute exact path='/bulk-data' component={BulkData} />
+          <ProtectedRoute exact path='/update-user' component={UpdateUser} />
           <Route component component={NotFound} />
         </Switch>
       </Layout>

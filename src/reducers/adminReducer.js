@@ -8,7 +8,8 @@ export default (state= INITIAL_STATE, action) =>{
   switch (action.type) {
     case GET_USERS:
       break;
-  
+    case UPDATE_USER:
+      break;
     default:
       return state;
   }
