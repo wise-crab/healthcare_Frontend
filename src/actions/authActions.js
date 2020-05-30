@@ -1,35 +1,34 @@
-import axios from 'axios';
-import { loginURL } from '../APIS/apis'
-import { LOGIN_REQUEST, LOGOUT_REQUEST, LOADING, ERROR } from '../types/authTypes'
+import axios from "axios";
+import { loginURL } from "../APIS/apis";
+import { LOGIN_REQUEST } from "../types/authTypes";
 
-export const loginRequest = payload => {
-  console.log(payload);
+export const loginRequest = (payload) => {
+  return (dispatch) =>
+    dispatch({
+      type: LOGIN_REQUEST,
+      payload,
+    });
+};
 
-  return (dispatch)=>dispatch({
-    type: LOGIN_REQUEST,
-    payload,
-  })
-}
+export const loginUser = ({ username, password, history }) => {
+  console.log(loginURL);
 
-export const loginUser = ({username, password}) => {
-    console.log(loginURL);
-    
   return (dispatch) => {
-    axios.post(loginURL, {
-      username,
-      password,
-    })
-      .then(({data})=>{
+    axios
+      .post(loginURL, {
+        username,
+        password,
+      })
+      .then(({ data }) => {
         console.log(data);
-        document.cookie = `role=${data.data.userRol}`;
-        document.cookie = `jwt=${data.data.token}`;      
-        const redirect = `/${data.data.userRol}`;
-        window.location.href = redirect;
+        const role = data.data.userRol;
+        document.cookie = `role=${role}`;
+        document.cookie = `token=${data.data.token}`;
+        const redirect = `/${role}`;
         dispatch(loginRequest(data.data));
+        history.push(redirect);
       })
-      .then(()=>{
-      })
-      .catch( (err) => dispatch(console.error(err)));
-  }
-
-}
+      .then(() => {})
+      .catch((err) => dispatch(console.error(err)));
+  };
+};
