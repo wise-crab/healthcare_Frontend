@@ -5,7 +5,7 @@
   "main": "./src/index.js",
   "scripts": {
     "build": "webpack --mode production",
-    "client": "webpack-dev-server --mode development --open --host 0.0.0.0",
+    "client": "webpack-dev-server --mode development --open",
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "json-server --watch --host 0.0.0.0 api.json",
     "start": "npm-run-all client server -p",
@@ -48,6 +48,7 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-transform-runtime": "7.10.1",
     "babel-eslint": "^10.1.0",
     "css-loader": "^3.5.3",
     "enzyme": "^3.11.0",

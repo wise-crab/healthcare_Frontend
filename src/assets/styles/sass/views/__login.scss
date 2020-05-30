@@ -1,0 +1,39 @@
+@import '../styles.scss';
+
+.login {
+    &__container {
+        &-logo {
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: center;
+        }
+
+        &-remember-me {
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: space-between;
+            input {
+                margin-right: $half-u;
+            }
+        }
+
+        button[type='submit'] {
+            margin-bottom: $one-u;
+        }
+    }
+}
+
+.login-card {
+    @media screen and(min-width: $tablet) {
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+    @media screen and(min-width: $laptop) {
+        padding-left: 25%;
+        padding-right: 25%;
+    }
+    @media screen and(min-width: $desktop) {
+        padding-left: 35%;
+        padding-right: 35%;
+    }
+}
