@@ -50,15 +50,7 @@ const Login = (props) => {
               placeholder='Password'
               required
             />
-            <div className='login__container-remember-me'>
-              <label>
-                <input type='checkbox' id='cbox1' value='first_checkbox' />
-                Remember me
-              </label>
-              <a href='/' id='forgot'>
-                Forgot password
-              </a>
-            </div>
+
             <button className='button' type='submit'>
               Login
             </button>
