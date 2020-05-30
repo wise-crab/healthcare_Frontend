@@ -6,7 +6,50 @@
   padding: 0 $one-u;
   background-color: $white;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid $light-gray;
+  @media screen and (min-width: $laptop) {
+    justify-content: center;
+  }
+
+  &__brand {
+    display: flex;
+    align-items: center;
+    @media screen and (min-width: $laptop) {
+      display: none;
+    }
+    &-logo {
+      width: $two-u-h;
+      margin-right: $half-u;
+    }
+    &-title {
+      @extend .font-bold;
+    }
+  }
+
+  &__title {
+    display: none;
+    @media screen and (min-width: $laptop) {
+      display: initial;
+    }
+  }
+
+  &__buttons {
+    position: relative;
+
+    button:last-child {
+      background-color: $white;
+      color: $blue;
+      border: 2px solid $blue;
+      @media screen and (min-width: $laptop) {
+        display: none;
+      }
+    }
+
+    button.open {
+      background-color: $blue;
+      color: $white;
+    }
+  }
 }
