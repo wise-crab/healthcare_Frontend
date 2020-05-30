@@ -35,7 +35,6 @@ const ProtectedRoute = ({ component: Component, ...rest }) => {
       }}
     />
   );
-
 };
 
 const mapStateToProps = (state) => {
