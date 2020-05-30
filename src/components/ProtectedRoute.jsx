@@ -9,6 +9,7 @@ const ProtectedRoute = ({ component: Component, ...rest }) => {
 
   const currentRole = rest.user.role || 'patient';
   const currentRoutes = routes[currentRole];
+
   let hasAccess = false;
   const allowAccess = () => {
     currentRoutes.forEach((element) => {

@@ -11,6 +11,7 @@ import routes from '../routes/index';
 
 const Sidebar = (props) => {
   const { role } = props.user;
+
   if (role == null) {
     return '';
   }
@@ -46,7 +47,7 @@ const Sidebar = (props) => {
           })}
           <li className='sidebar__menu-item'>
             <i className='fa fa-sign-out' />
-            <a href='javascript:void(0)'>Salir</a>
+            <a href='/'>Salir</a>
           </li>
         </ol>
       </section>

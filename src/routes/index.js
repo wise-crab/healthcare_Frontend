@@ -16,6 +16,7 @@ const routes = {
     { path: '#', name: 'Users', icon: 'fa fa-home' },
     { path: '#', name: 'Create User', icon: 'fa fa-home' },
     { path: '/bulk-data', name: 'Bulky Upload', icon: 'fa fa-home' },
+    { path: '/update-user', name: 'Update user', icon: 'fa fa-home' },
   ],
 };
 
