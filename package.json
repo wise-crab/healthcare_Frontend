@@ -10,7 +10,7 @@
     "server": "json-server --watch --host 0.0.0.0 api.json",
     "start": "npm-run-all client server -p",
     "lint": "eslint ./src/ --ext .js --ext .jsx --fix",
-    "format": "prettier --write '{*.js,src/**/*.{js,jsx}}'"
+    "format": "prettier --write {*.js,src/**/*.{js,jsx}}"
   },
   "repository": {
     "type": "git",

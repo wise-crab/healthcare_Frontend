@@ -22,6 +22,7 @@ class BulkData extends Component {
           this.data = data;
           this.proviewData = data.slice(0, 20);
           this.setState({ proviewData: data.slice(0, 20) });
+          return null;
         });
       };
 
