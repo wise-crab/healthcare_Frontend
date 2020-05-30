@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
@@ -10,6 +11,10 @@ import routes from '../routes/index';
 
 const Sidebar = (props) => {
   const { role } = props.user;
+  if (role == null) {
+    return '';
+  }
+
   const options = routes[role];
 
   function isCurrentRoute(route) {
@@ -39,6 +44,10 @@ const Sidebar = (props) => {
               </li>
             );
           })}
+          <li className='sidebar__menu-item'>
+            <i className='fa fa-sign-out' />
+            <a href='javascript:void(0)'>Salir</a>
+          </li>
         </ol>
       </section>
     </section>
