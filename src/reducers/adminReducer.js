@@ -9,6 +9,10 @@ export default (state= INITIAL_STATE, action) =>{
     case GET_USERS:
       break;
     case UPDATE_USER:
+      return {
+        ...state,
+        data: action.payload,
+      }
       break;
     default:
       return state;

@@ -11,11 +11,9 @@ export const updateUsers = (id, data) => {
   });
   const _id = id.id;
   const URL = `${updateUser}${_id}`
-  const token = getCookie('jwt')
+  const token = getCookie('token')
   axios.defaults.headers.common ={'Authorization' : `Bearer ${token}`}
   try {
-    console.log(URL, data, token);
-    debugger
     const res = await axios.put(URL, {
       "numberId": data.numberId,
       "name": data.name,
@@ -26,9 +24,8 @@ export const updateUsers = (id, data) => {
     });
     dispatch({
       type: UPDATE_USER,
-      payload: res.data.data
+      payload: res.data
     })
-    console.log(payload)
   } catch (err) {
     dispatch({
       type: ERROR,

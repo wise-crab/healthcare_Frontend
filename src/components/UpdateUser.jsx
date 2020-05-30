@@ -26,7 +26,8 @@ const UpdateUser = (props) => {
     event.preventDefault();
     props.updateUsers({ id: form.id }, form)
   }
-
+  
+  const response = props.data.data
 
   return (
     <>
@@ -117,14 +118,27 @@ const UpdateUser = (props) => {
             </div>
           </div>
           <button className='button' type='submit'>Guardar</button>
+          {
+            response !== undefined ?
+            <div className='create-user-form__form-group'>
+              <h3>usuario modificado</h3>
+            </div> :
+            null
+          }
         </form>
       </section>
     </>
   );
 };
 
+const mapStateToProps = (state) => {
+  return {
+    data: state.adminReducer,
+  }
+}
+
 const mapDispatchToProps = {
   updateUsers,
 };
 
-export default connect (null, mapDispatchToProps)(UpdateUser);
+export default connect (mapStateToProps, mapDispatchToProps)(UpdateUser);
