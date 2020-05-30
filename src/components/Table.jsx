@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState , useMemo } from "react";
 import { connect } from "react-redux";
 import Tracker from "./Tracker";
 import "../assets/styles/sass/components/_table.scss";
 import "../assets/styles/sass/components/_stepProgress.scss";
+import Checkbox from './Checkbox';
+
 
 const Table = ({ data }) => {
   const titles = Object.keys(data[0]);
@@ -23,7 +25,9 @@ const Table = ({ data }) => {
 
             return (
               <tr key={idx}>
-                <td>Select</td>
+                <td>
+                  <Checkbox text=' ' value={item.$oid} />
+                </td>
                 <td>{item.type}</td>
                 <td>{date}</td>
                 <td>{item.$oid}</td>
@@ -72,7 +76,6 @@ const activateLasers = (stepCount) => {
       if (step === 1) {	
         step = 2;	
         console.log(step1);
-        debugger
         step1.classList.remove("is-active");	
         step1.classList.add("is-complete");	
         step2.classList.add("is-active");	
