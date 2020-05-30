@@ -6,7 +6,6 @@ import { loginUser } from '../actions/authActions';
 import '../assets/styles/sass/views/__login.scss';
 
 const Login = (props) => {
-  debugger
 
   const [form, setValues] = useState({
     username: '',

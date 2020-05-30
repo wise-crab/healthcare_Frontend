@@ -18,7 +18,6 @@ export const loginUser = ({ username, password, history }) => {
         password,
       })
       .then(({ data }) => {
-        debugger
         const role = data.data.userRol;
         document.cookie = `role=${role}`;
         document.cookie = `token=${data.data.token}`;
