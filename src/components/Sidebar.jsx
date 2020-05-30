@@ -38,8 +38,10 @@ const Sidebar = (props) => {
   );
 };
 
-const mapStateToProps = (reducers) => {
-  return reducers;
+const mapStateToProps = (state) => {
+  return {
+    user: state.loginReducer,
+  };
 };
 
 export default withRouter(connect(mapStateToProps, null)(Sidebar));

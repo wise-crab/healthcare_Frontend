@@ -1,31 +1,28 @@
 import axios from "axios";
 import { loginURL } from "../APIS/apis";
-import { LOGIN_REQUEST } from "../types/authTypes";
+import { LOGIN_REQUEST, LOGIN_SET_USER } from "../types/authTypes";
 
 export const loginRequest = (payload) => {
   return (dispatch) =>
     dispatch({
-      type: LOGIN_REQUEST,
+      type: LOGIN_SET_USER,
       payload,
     });
 };
 
 export const loginUser = ({ username, password, history }) => {
-  console.log(loginURL);
-
   return (dispatch) => {
     axios
-      .post(loginURL, {
+      .post(`${loginURL}`, {
         username,
         password,
       })
       .then(({ data }) => {
-        console.log(data);
-        const role = data.data.userRol;
+        const role = data.data.userData.rol;
         document.cookie = `role=${role}`;
         document.cookie = `token=${data.data.token}`;
         const redirect = `/${role}`;
-        dispatch(loginRequest(data.data));
+        dispatch(loginRequest(data.data.userData));
         history.push(redirect);
       })
       .then(() => {})
