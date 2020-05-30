@@ -1,13 +1,13 @@
 // server Domain
-const serverIP = `http://localhost:3000`;
+const serverIP = 'http://localhost:3000';
 
 //Users
-const getUsersList = `https://data-mock-278118.wl.r.appspot.com/api/users`;
-const getUserByID = `https://data-mock-278118.wl.r.appspot.com/api/users/ID`;
+const getUsersList = 'https://data-mock-278118.wl.r.appspot.com/api/users';
+const getUserByID = 'https://data-mock-278118.wl.r.appspot.com/api/users/ID';
 
 //Exams
-const examsList = `https://data-mock-278118.wl.r.appspot.com/api/exams`;
-const getExamByID = `https://data-mock-278118.wl.r.appspot.com/api/exams/ID`;
+const examsList = 'https://data-mock-278118.wl.r.appspot.com/api/exams';
+const getExamByID = 'https://data-mock-278118.wl.r.appspot.com/api/exams/ID';
 const examsByPatientURL = `${serverIP}/types-exams/`;
 
 const patientsList = `${serverIP}/users-rol?rol=patient`;

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Table from '../../components/Table';
+
 const Patient = () => {
   const [state, setState] = useState({ isReady: false, data: [] });
   useEffect(() => {

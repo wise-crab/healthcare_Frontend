@@ -1,4 +1,5 @@
 import { LOGIN_SET_USER } from '../types/authTypes';
+
 const initialState = {
   role: null,
 };

@@ -1,9 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './components/App';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
+import ReactDOM from 'react-dom';
 import { store, persistor } from './store';
+import App from './components/App';
 
 ReactDOM.render(
   <Provider store={store}>
@@ -11,5 +11,5 @@ ReactDOM.render(
       <App />
     </PersistGate>
   </Provider>,
-  document.getElementById('app')
+  document.getElementById('app'),
 );

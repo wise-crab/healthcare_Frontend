@@ -1,3 +1,4 @@
+/* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import { connect } from 'react-redux';
 import { SIDEBAR_CLOSE, SIDEBAR_OPEN } from '../types/sidebarTypes';
@@ -20,8 +21,9 @@ const Navbar = (props) => {
         <button
           className={`button--icon ${props.sidebar.open && 'open'}`}
           onClick={() => handleSidebar()}
+          type='button'
         >
-          <i className='fa fa-bars'></i>
+          <i className='fa fa-bars' />
         </button>
       </div>
     </nav>
