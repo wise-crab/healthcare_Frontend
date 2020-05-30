@@ -11,9 +11,7 @@ const ExamsByPacient = (props) => {
     props.getExamsByPatient(id);    
   }  
   const data = props.exams.exmas || null;
-  debugger
-  console.log(data);
-
+  
   return (
     <div>
       <button className='button--icon' onClick={getPatientExams(idx)}></button>

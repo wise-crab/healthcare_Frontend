@@ -1,6 +1,6 @@
 import { patientsList, getUser, examsByPatientURL} from '../APIS/apis';
 import axios from 'axios';
-import getCookie from '../functions/getCookie'
+import getCookie from '../functions/getCookie';
 import { ADD_EXAM, SEARCH_PATIENT, GET_EXAMS_BY_PATIENT } from '../types/doctorTypes'
 import { ERROR, LOADING } from '../types/asyncTypes'
 
