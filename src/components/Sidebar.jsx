@@ -7,7 +7,6 @@ import profilePicture from '../assets/img/user-profile.png';
 import routes from '../routes/index';
 
 const Sidebar = (props) => {
-  debugger
   const role = props.user.role;
   if (role == null) {
     return '';

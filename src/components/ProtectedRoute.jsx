@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import routes from '../routes/index';
 
 const ProtectedRoute = ({ component: Component, ...rest }) => {
+  debugger
   rest.user.role == null && rest.history.push('/');
 
   let currentRole = rest.user.role || 'patient';
