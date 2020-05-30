@@ -1,30 +1,29 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 import Doctor from './Profiles/Doctor';
 import Patient from './Profiles/Patient';
 import Admin from './Profiles/Admin';
 import Bacteriologist from './Profiles/Bacteriologist';
-import * as loginUser from '../actions/loginActions';
+import * as loginUser from '../actions/authActions';
 
-import getCookie from '../functions/getCookie'
+import getCookie from '../functions/getCookie';
 
 class Home extends Component {
-  componentDidMount(){
-    this.props
+  componentDidMount() {
+    this.props;
   }
-  render(){
-    
+
+  render() {
     console.log(this);
-    
-    
+
     const role = getCookie('role');
-    
+
     return (
       <section className='doctor card'>
-        {role == 'patient' && <Patient />}
-        {role == 'doctor' && <Doctor />}
-        {role == 'admin' && <Admin />}
-        {role == 'bacteriologist' && <Bacteriologist />}
+        {role === 'patient' && <Patient />}
+        {role === 'doctor' && <Doctor />}
+        {role === 'admin' && <Admin />}
+        {role === 'bacteriologist' && <Bacteriologist />}
       </section>
     );
   }
@@ -36,6 +35,6 @@ class Home extends Component {
 
 const mapDispatchToProps = {
   loginUser,
-}
+};
 
-export default connect (null,mapDispatchToProps) (Home);
+export default connect(null, mapDispatchToProps)(Home);

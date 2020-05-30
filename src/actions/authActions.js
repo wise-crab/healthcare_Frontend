@@ -1,13 +1,12 @@
-import axios from "axios";
-import { loginURL } from "../APIS/apis";
-import { LOGIN_REQUEST, LOGIN_SET_USER } from "../types/authTypes";
+import axios from 'axios';
+import { loginURL } from '../APIS/apis';
+import { LOGIN_SET_USER } from '../types/authTypes';
 
 export const loginRequest = (payload) => {
-  return (dispatch) =>
-    dispatch({
-      type: LOGIN_SET_USER,
-      payload,
-    });
+  return (dispatch) => dispatch({
+    type: LOGIN_SET_USER,
+    payload,
+  });
 };
 
 export const loginUser = ({ username, password, history }) => {

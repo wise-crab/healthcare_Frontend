@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import logo from "../assets/img/Brand-icon-horizontal.png";
-import { loginUser } from "../actions/authActions";
-import "../assets/styles/sass/views/__login.scss";
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import logo from '../assets/img/Brand-icon-horizontal.png';
+import { loginUser } from '../actions/authActions';
+import '../assets/styles/sass/views/__login.scss';
 
 const Login = (props) => {
   const [form, setValues] = useState({
-    username: "",
-    role: "",
+    username: '',
+    role: '',
   });
 
   const updateInput = (event) => {
@@ -24,44 +24,44 @@ const Login = (props) => {
   };
 
   return (
-    <div className="login-card">
+    <div className='login-card'>
       <h1>Sign In</h1>
-      <section className="login card">
-        <section className="login__container">
-          <div className="login__container-logo">
-            <img src={logo} alt="logo" />
+      <section className='login card'>
+        <section className='login__container'>
+          <div className='login__container-logo'>
+            <img src={logo} alt='logo' />
           </div>
-          <form className="login__container-form" onSubmit={handleSubmit}>
-            <label htmlFor="username">Nombre de usuario</label>
+          <form className='login__container-form' onSubmit={handleSubmit}>
+            <label htmlFor='username'>Nombre de usuario</label>
             <input
-              id="username"
-              name="username"
-              className="input"
-              type="text"
-              placeholder="Username"
+              id='username'
+              name='username'
+              className='input'
+              type='text'
+              placeholder='Username'
               onChange={updateInput}
               required
             />
-            <label htmlFor="password">Contraseña</label>
+            <label htmlFor='password'>Contraseña</label>
             <input
-              id="password"
-              name="password"
-              className="input"
-              type="password"
+              id='password'
+              name='password'
+              className='input'
+              type='password'
               onChange={updateInput}
-              placeholder="Password"
+              placeholder='Password'
               required
             />
-            <div className="login__container-remember-me">
+            <div className='login__container-remember-me'>
               <label>
-                <input type="checkbox" id="cbox1" value="first_checkbox" />
+                <input type='checkbox' id='cbox1' value='first_checkbox' />
                 Remember me
               </label>
-              <a href="/" id="forgot">
+              <a href='/' id='forgot'>
                 Forgot password
               </a>
             </div>
-            <button className="button" type="submit">
+            <button className='button' type='submit'>
               Login
             </button>
           </form>

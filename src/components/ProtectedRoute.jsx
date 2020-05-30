@@ -1,11 +1,13 @@
+/* eslint-disable react/jsx-props-no-spreading */
+
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import routes from '../routes/index';
 
 const ProtectedRoute = ({ component: Component, ...rest }) => {
-  let currentRole = rest.user.role;
-  let currentRoutes = routes[currentRole];
+  const currentRole = rest.user.role;
+  const currentRoutes = routes[currentRole];
   let hasAccess = false;
   const allowAccess = () => {
     currentRoutes.forEach((element) => {
@@ -20,21 +22,20 @@ const ProtectedRoute = ({ component: Component, ...rest }) => {
   if (hasAccess) {
     return (
       <Route
-        {...rest}
         render={(props) => {
           return <Component {...props} />;
         }}
       />
     );
-  } else {
-    return (
-      <Redirect
-        to={{
-          pathname: currentRoutes[0].path,
-        }}
-      />
-    );
   }
+  return (
+    <Redirect
+      to={{
+        pathname: currentRoutes[0].path,
+      }}
+    />
+  );
+
 };
 
 const mapStateToProps = (state) => {

@@ -1,4 +1,7 @@
-import React from "react";
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/no-array-index-key */
+
+import React from 'react';
 
 export default class DynamicTable extends React.Component {
   constructor(props) {
@@ -13,23 +16,24 @@ export default class DynamicTable extends React.Component {
   };
 
   getHeader = () => {
-    var keys = this.getKeys();
+    const keys = this.getKeys();
     return keys.map((key, index) => {
       return <th key={key}>{key.toUpperCase()}</th>;
     });
   };
 
   getRowsData = () => {
-    var items = this.props.data;
-    var keys = this.getKeys();
+    const items = this.props.data;
+    const keys = this.getKeys();
     return items.map((row, index) => {
       return (
-        <tr key={index}>
+        <tr key={`${index}t`}>
           <RenderRow key={index} data={row} keys={keys} />
         </tr>
       );
     });
   };
+
   render() {
     return (
       <div>
