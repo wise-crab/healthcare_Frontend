@@ -6,6 +6,7 @@ import { loginUser } from '../actions/authActions';
 import '../assets/styles/sass/views/__login.scss';
 
 const Login = (props) => {
+
   const [form, setValues] = useState({
     username: '',
     role: '',
@@ -57,9 +58,6 @@ const Login = (props) => {
                 <input type='checkbox' id='cbox1' value='first_checkbox' />
                 Remember me
               </label>
-              <a href='/' id='forgot'>
-                Forgot password
-              </a>
             </div>
             <button className='button' type='submit'>
               Login
@@ -77,6 +75,12 @@ const mapDispatchToProps = {
 
 Login.propTypes = {
   loginUser: PropTypes.func,
+}
+
+const mapStateToProps = (state) => {
+  return {
+    user: state.loginReducer,
+  };
 };
 
-export default connect(null, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

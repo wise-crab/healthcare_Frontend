@@ -1,7 +1,5 @@
-/* eslint-disable react/jsx-props-no-spreading */
-
-import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import routes from '../routes/index';
 
@@ -43,4 +41,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(ProtectedRoute);
+export default connect(mapStateToProps)(withRouter(ProtectedRoute));
