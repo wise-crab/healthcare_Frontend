@@ -24,10 +24,11 @@ const routes = {
   ],
   admin: [
     { path: '/admin', name: 'Home', icon: 'fa fa-home' },
-    { path: '#', name: 'Users', icon: 'fa fa-users' },
-    { path: '/create-user', name: 'Create User', icon: 'fa fa-plus' },
-    { path: '/bulk-data', name: 'Bulky Upload', icon: 'fa fa-upload' },
-    { path: '/update-user', name: 'Update user', icon: 'fa fa-edit' },
+    { path: '/users-rol', name: 'Users', icon: 'fa fa-home' },
+    { path: '/search', name: 'User', icon: 'fa fa-home' },
+    { path: '/create-user', name: 'Create User', icon: 'fa fa-home' },
+    { path: '/bulk-data', name: 'Bulky Upload', icon: 'fa fa-home' },
+    { path: '/update-user', name: 'Update user', icon: 'fa fa-home' },
   ],
 };
 
