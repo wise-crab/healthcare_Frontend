@@ -14,7 +14,7 @@ export const getExamsByPatient = (id) => {
       type: LOADING,
     });
     const URL = `${examsByPatientURL}${id}`;
-    const token = getCookie('jwt');
+    const token = getCookie('token');
     try {
       const res = await axios.get(URL, {
         headers: { Authorization: `Bearer ${token}` },
@@ -40,7 +40,8 @@ export const getPatient = ({ id }) => {
       type: LOADING,
     });
     const URL = `${getUser}${id}`;
-    const token = getCookie('jwt');
+    const token = getCookie('token');
+    axios.defaults.headers.common = { Authorization: `Bearer ${token}` };
     try {
       const res = await axios.get(URL, {
         headers: { Authorization: `Bearer ${token}` },

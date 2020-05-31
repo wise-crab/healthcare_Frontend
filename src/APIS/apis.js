@@ -15,7 +15,7 @@ const loginURL = `${serverIP}/login`;
 const listUsers = `${serverIP}/users`;
 const getUser = `${serverIP}/users/user?document=`;
 const createUserURL = listUsers;
-const updateUser = listUsers;
+const updateUser = `${serverIP}/users/`;
 const csvUpload = `${serverIP}/users-csv`;
 
 module.exports = {

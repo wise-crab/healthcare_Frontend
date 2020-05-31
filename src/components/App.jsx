@@ -11,6 +11,9 @@ import Profile from '../views/Profile';
 import CreateUser from '../views/CreateUser';
 import BulkData from '../views/BulkData';
 import NotFound from '../views/NotFound';
+import UpdateUser from './UpdateUser';
+import BacteriologistExamsByPatient from '../views/BacteriologistExamsByPatient';
+import AssignExamResult from '../views/AssignExamResult';
 
 const App = () => {
   return (
@@ -26,9 +29,20 @@ const App = () => {
             path='/bacteriologist'
             component={Bacteriologist}
           />
+          <ProtectedRoute
+            exact
+            path='/bacteriologist/patient-exams'
+            component={BacteriologistExamsByPatient}
+          />
+          <ProtectedRoute
+            exact
+            path='/bacteriologist/assign-results'
+            component={AssignExamResult}
+          />
           <ProtectedRoute exact path='/profile' component={Profile} />
           <ProtectedRoute exact path='/create-user' component={CreateUser} />
           <ProtectedRoute exact path='/bulk-data' component={BulkData} />
+          <ProtectedRoute exact path='/update-user' component={UpdateUser} />
           <Route component={NotFound} />
         </Switch>
       </Layout>

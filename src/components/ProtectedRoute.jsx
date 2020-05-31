@@ -1,11 +1,15 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import routes from '../routes/index';
 
 const ProtectedRoute = ({ component: Component, ...rest }) => {
-  const currentRole = rest.user.role;
+  rest.user.role == null && rest.history.push('/');
+
+  const currentRole = rest.user.role || 'patient';
   const currentRoutes = routes[currentRole];
+
   let hasAccess = false;
   const allowAccess = () => {
     currentRoutes.forEach((element) => {

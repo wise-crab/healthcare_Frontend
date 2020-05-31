@@ -44,7 +44,7 @@ const Sidebar = (props) => {
           })}
           <li className='sidebar__menu-item'>
             <i className='fa fa-sign-out' />
-            <a href='#'>Salir</a>
+            <a href='/'>Salir</a>
           </li>
         </ol>
       </section>
