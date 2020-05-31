@@ -1,10 +1,17 @@
+<<<<<<< HEAD
+=======
+/* eslint-disable react/destructuring-assignment */
+>>>>>>> 7219cfa05a4dade9e9e365669aacbcec2a290a1b
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import '../assets/styles/sass/views/_profile.scss';
 import { updateUsers } from '../actions/adminActions';
 
 const UpdateUser = (props) => {
+<<<<<<< HEAD
   const { data } = props;
+=======
+>>>>>>> 7219cfa05a4dade9e9e365669aacbcec2a290a1b
   const [form, setValues] = useState({
     id: '',
     numberId: '',
@@ -27,7 +34,11 @@ const UpdateUser = (props) => {
     props.updateUsers({ id: form.id }, form);
   };
 
+<<<<<<< HEAD
   const response = data.data;
+=======
+  const response = props.data.data;
+>>>>>>> 7219cfa05a4dade9e9e365669aacbcec2a290a1b
 
   return (
     <>

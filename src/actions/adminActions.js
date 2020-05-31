@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { UPDATE_USER, GET_ROL } from '../types/adminTypes';
+import { UPDATE_USER, GET_ROL, CSV_UPLOAD, CSV_UPLOAD_SUCESS } from '../types/adminTypes';
 import getCookie from '../functions/getCookie';
 import { ERROR, LOADING } from '../types/asyncTypes';
-import { updateUser, usersByRol } from '../APIS/apis';
+import { updateUser, usersByRol, csvUpload } from '../APIS/apis';
 
 export const updateUsers = (id, data) => {
   return async (dispatch) => {
@@ -26,6 +26,29 @@ export const updateUsers = (id, data) => {
         type: UPDATE_USER,
         payload: res.data,
       });
+    } catch (err) {
+      dispatch({
+        type: ERROR,
+        payload: err.message,
+      });
+    }
+  };
+};
+
+export const uploadUsers = (data, history) => {
+  return async (dispatch) => {
+    dispatch({
+      type: CSV_UPLOAD,
+    });
+    const URL = `${csvUpload}`;
+    try {
+      const token = getCookie('token');
+      axios.defaults.headers.common = { Authorization: `Bearer ${token}` };
+      await axios.post(URL, data);
+      dispatch({
+        type: CSV_UPLOAD_SUCESS,
+      });
+      history.push('/');
     } catch (err) {
       dispatch({
         type: ERROR,

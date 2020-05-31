@@ -84,11 +84,6 @@
       "\\.(jp|jpeg|png|gif)$": "<rootDir>/src/__mocks__/fileMock.js"
     }
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "*.{js,jsx}": [
       "npm run format",
