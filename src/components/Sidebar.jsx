@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
