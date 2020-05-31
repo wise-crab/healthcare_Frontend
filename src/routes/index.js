@@ -4,12 +4,23 @@ const routes = {
     { path: '#', name: 'Exams Results', icon: 'fa fa-home' },
   ],
   doctor: [
-    { path: '/medic', name: 'Home', icon: 'fa fa-home' },
+    { path: '/doctor', name: 'Home', icon: 'fa fa-home' },
     { path: '#', name: 'Patient List', icon: 'fa fa-home' },
   ],
   bacteriologist: [
-    { path: '/bacteriologist', name: 'Home', icon: 'fa fa-home' },
-    { path: '#', name: 'Patient List', icon: 'fa fa-home' },
+    { path: '/bacteriologist', name: 'Home', icon: 'fa fa-home', render: true },
+    {
+      path: '/bacteriologist/patient-exams',
+      name: 'Exámenes de paciente',
+      icon: 'fa fa-file-text-o',
+      render: false,
+    },
+    {
+      path: '/bacteriologist/assign-results',
+      name: 'Asignar resultados',
+      icon: 'fa fa-file-text-o',
+      render: false,
+    },
   ],
   admin: [
     { path: '/admin', name: 'Home', icon: 'fa fa-home' },
