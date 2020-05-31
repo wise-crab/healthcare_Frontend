@@ -1,77 +1,68 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/jsx-no-bind */
-import React, { Component } from 'react';
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
 import Dropzone from 'react-dropzone';
 import csv from 'csv';
+import uploadUsers from '../actions/adminActions';
 import DynamicTable from '../components/DynamicTable';
 
-class BulkData extends Component {
-  constructor() {
-    super();
-    this.proviewData = [];
-    this.state = {
-      files: [],
-      proviewData: [],
+function BulkData(props) {
+  const [dataUpload, setDataUpload] = useState(0);
+
+  const uploadUsersData = (files) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      csv.parse(reader.result, { columns: true }, (err, data) => {
+        if (err) return err;
+        setDataUpload(data);
+        return null;
+      });
     };
-    this.onDrop = (files) => {
-      const reader = new FileReader();
-      reader.onload = () => {
-        csv.parse(reader.result, { columns: true }, (err, data) => {
-          if (err) return err;
-          this.data = data;
-          this.proviewData = data.slice(0, 20);
-          this.setState({ proviewData: data.slice(0, 20) });
-          return null;
-        });
-      };
+    reader.readAsBinaryString(files[0]);
+  };
 
-      reader.readAsBinaryString(files[0]);
-      this.setState({ files });
+  const uploadDataServer = () => {
+    console.log(dataUpload);
+    const data = {
+      users: dataUpload,
     };
-  }
+    props.uploadUsers(data, props.history);
+  };
 
-  render() {
-    const files = this.state.files.map((file) => (
-      <li key={file.name}>
-        {file.name}
-        {' '}
-        -
-        {file.size}
-        {' '}
-        bytes
-      </li>
-    ));
+  return (
+    <section className='container'>
+      <Dropzone onDrop={uploadUsersData}>
+        {({ getRootProps, getInputProps }) => (
+          <div {...getRootProps()}>
+            <input {...getInputProps()} />
+            Click me to upload a file!
+          </div>
+        )}
+      </Dropzone>
 
-    return (
-      <div align='center' onContextMenu='return false'>
-        <Dropzone accept='.csv' onDropAccepted={this.onDrop.bind(this)}>
-          {({ getRootProps, getInputProps }) => (
-            <section className='container'>
-              <div {...getRootProps({ className: 'dropzone' })}>
-                <input {...getInputProps()} />
-                <p>
-                  Arrastre y suelte el archivo CSV aquí, o haga clic aqui para
-                  seleccionar archivos
-                </p>
-              </div>
-              <aside>
-                <h4>Archivos seleccionados</h4>
-                <ul>{files}</ul>
-
-                {this.state.proviewData.length > 0 && (
-                  <>
-                    <DynamicTable data={this.state.proviewData} />
-                    <button type='button'>Importar Datos</button>
-                  </>
-                )}
-              </aside>
-            </section>
-          )}
-        </Dropzone>
-      </div>
-    );
-  }
+      <aside>
+        {dataUpload.length > 0 && (
+          <>
+            <DynamicTable data={dataUpload} />
+            <button onClick={uploadDataServer} type='button'>
+              Cargar Archivo
+            </button>
+          </>
+        )}
+      </aside>
+    </section>
+  );
 }
+const mapStateToProps = (state) => {
+  return {
+    exams: state.uploadReducer,
+  };
+};
 
-export default BulkData;
+const mapDispatchToProps = {
+  uploadUsers,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(BulkData);
