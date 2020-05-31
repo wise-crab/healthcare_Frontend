@@ -5,6 +5,8 @@ import DynamicTable from './DynamicTable';
 import { searchByrol } from '../actions/adminActions';
 
 const UsersByrol = (props) => {
+  const { users } = props;
+  const dataUser = [];
   const [form, setValues] = useState({
     rol: '',
   });
@@ -20,8 +22,6 @@ const UsersByrol = (props) => {
     event.preventDefault();
     props.searchByrol(form);
   };
-  const { users } = props;
-  const dataUser = [];
   users.users.forEach((item) => {
     const user = {
       id: item._id,
@@ -41,7 +41,7 @@ const UsersByrol = (props) => {
       <h3>Buscar usuarios por rol</h3>
       <section>
         <form className='search' id='search-component' onSubmit={handleSubmit}>
-          <select name='rol' id='rol' onChange={updateInput}>
+          <select className='search-rol' name='rol' onInput={updateInput}>
             <option value=''>Escoge un rol...</option>
             <option value='patient'>Patient</option>
             <option value='doctor'>Doctor</option>
