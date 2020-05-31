@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import routes from '../routes/index';

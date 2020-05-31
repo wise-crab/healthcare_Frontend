@@ -1,8 +1,9 @@
+/* eslint-disable react/button-has-type */
 import React, { useState } from 'react';
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 import '../assets/styles/sass/views/_createUser.scss';
 
-import { addUser } from '../actions/adminActions'
+import { addUser } from '../actions/adminActions';
 
 const CreateUser = (props) => {
   const [form, setValues] = useState({
@@ -12,21 +13,20 @@ const CreateUser = (props) => {
     cdi: '',
     phone: '',
     role: '',
-  })
+  });
 
   const updateInput = (event) => {
     setValues({
       ...form,
-      [event.target.name]: event.target.value
-    })
-  }
+      [event.target.name]: event.target.value,
+    });
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    props.addUser(form)
+    props.addUser(form);
   };
-  
-  
+
   return (
     <>
       <h1>Creación de usuarios</h1>
@@ -101,7 +101,6 @@ const CreateUser = (props) => {
               </select>
             </div>
           </div>
-          
         </div>
         <button className='button'>Guardar</button>
       </form>
