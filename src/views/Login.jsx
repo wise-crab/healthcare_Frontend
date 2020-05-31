@@ -6,7 +6,6 @@ import { loginUser } from '../actions/authActions';
 import '../assets/styles/sass/views/__login.scss';
 
 const Login = (props) => {
-
   const [form, setValues] = useState({
     username: '',
     role: '',
@@ -75,7 +74,7 @@ const mapDispatchToProps = {
 
 Login.propTypes = {
   loginUser: PropTypes.func,
-}
+};
 
 const mapStateToProps = (state) => {
   return {

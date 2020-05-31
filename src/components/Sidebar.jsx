@@ -1,3 +1,6 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable jsx-a11y/img-redundant-alt */
+/* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter, Link } from 'react-router-dom';
@@ -7,8 +10,7 @@ import profilePicture from '../assets/img/user-profile.png';
 import routes from '../routes/index';
 
 const Sidebar = (props) => {
-  debugger
-  const role = props.user.role;
+  const { user: role } = props;
   if (role == null) {
     return '';
   }
@@ -25,22 +27,23 @@ const Sidebar = (props) => {
       <section className='sidebar__nav'>
         <div className='sidebar__profile'>
           <img src={profilePicture} alt='profile picture' />
-          <div>{props.user.name + ' ' + props.user.lastName}</div>
+          <div>{`${props.user.name} ${props.user.lastName}`}</div>
         </div>
         <ol className='sidebar__menu'>
           {options.map((option, idx) => {
             return (
               <li
+                // eslint-disable-next-line react/no-array-index-key
                 key={idx}
                 className={`sidebar__menu-item${isCurrentRoute(option.path)}`}
               >
-                <i className={option.icon}></i>
+                <i className={option.icon} />
                 <Link to={option.path}>{option.name}</Link>
               </li>
             );
           })}
-          <li className={`sidebar__menu-item`}>
-            <i className='fa fa-sign-out'></i>
+          <li className='sidebar__menu-item'>
+            <i className='fa fa-sign-out' />
             <a href='#'>Salir</a>
           </li>
         </ol>

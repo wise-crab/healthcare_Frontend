@@ -38,7 +38,6 @@ class BulkData extends Component {
         {' '}
         -
         {file.size}
-        {' '}
         bytes
       </li>
     ));

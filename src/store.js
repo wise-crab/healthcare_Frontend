@@ -20,6 +20,6 @@ const composeEnhancers =
 export const store = createStore(
   persistedReducer,
   {},
-  composeEnhancers(applyMiddleware(reduxThunk))
+  composeEnhancers(applyMiddleware(reduxThunk)),
 );
 export const persistor = persistStore(store);

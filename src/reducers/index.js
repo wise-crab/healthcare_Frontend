@@ -12,6 +12,5 @@ export default combineReducers({
   adminReducer,
   doctorReducer,
   bacteriologistReducer,
-  authReducer,
   sidebar,
 });
