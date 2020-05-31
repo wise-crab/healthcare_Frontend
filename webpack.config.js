@@ -7,7 +7,7 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: '[name].[hash].js',
   },
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -52,9 +52,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './public/index.html',
       filename: './index.html',
+      title: 'Caching',
     }),
     new MiniCssExtractPlugin({
-      filename: './src/assets/[name].css',
+      filename: './src/assets/[name].[hash].css',
     }),
     new webpack.HotModuleReplacementPlugin(),
   ],
