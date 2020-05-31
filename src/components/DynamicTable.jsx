@@ -2,6 +2,8 @@
 /* eslint-disable react/no-array-index-key */
 
 import React from 'react';
+import '../assets/styles/sass/components/_table.scss';
+import '../assets/styles/sass/components/_stepProgress.scss';
 
 export default class DynamicTable extends React.Component {
   constructor(props) {
@@ -36,8 +38,8 @@ export default class DynamicTable extends React.Component {
 
   render() {
     return (
-      <div>
-        <table>
+      <div className='table-responsive'>
+        <table className='table table-striped'>
           <thead>
             <tr>{this.getHeader()}</tr>
           </thead>
