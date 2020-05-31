@@ -1,7 +1,8 @@
 import {
   GET_USERS,
-  CSV_UPLOAD,
   UPDATE_USER,
+  GET_ROL,
+  CSV_UPLOAD,
   ADD_USER,
 } from '../types/adminTypes';
 
@@ -22,6 +23,11 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state,
         data: action.payload,
+      };
+    case GET_ROL:
+      return {
+        ...state,
+        users: action.payload.data,
       };
 
     default:

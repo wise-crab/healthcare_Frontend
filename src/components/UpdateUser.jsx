@@ -5,6 +5,7 @@ import '../assets/styles/sass/views/_profile.scss';
 import { updateUsers } from '../actions/adminActions';
 
 const UpdateUser = (props) => {
+  const { data } = props;
   const [form, setValues] = useState({
     id: '',
     numberId: '',
@@ -27,7 +28,7 @@ const UpdateUser = (props) => {
     props.updateUsers({ id: form.id }, form);
   };
 
-  const response = props.data.data;
+  const response = data.data;
 
   return (
     <>
