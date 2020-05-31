@@ -55,7 +55,7 @@ module.exports = {
       title: 'Caching',
     }),
     new MiniCssExtractPlugin({
-      filename: './src/assets/[name].[hash].css',
+      filename: './[name].[hash].css',
     }),
     new webpack.HotModuleReplacementPlugin(),
   ],

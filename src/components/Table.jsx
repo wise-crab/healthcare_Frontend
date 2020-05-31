@@ -43,6 +43,7 @@ const Table = ({ data }) => {
           })}
         </tbody>
       </table>
+      <Tracker />
     </div>
   );
 };
