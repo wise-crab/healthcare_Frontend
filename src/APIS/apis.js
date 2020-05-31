@@ -1,6 +1,6 @@
 // server Domain
-//const serverIP = 'http://localhost:3000';
 const serverIP = 'https://examedic.wl.r.appspot.com';
+
 //Users
 const getUsersList = 'https://data-mock-278118.wl.r.appspot.com/api/users';
 const getUserByID = 'https://data-mock-278118.wl.r.appspot.com/api/users/ID';
@@ -17,6 +17,7 @@ const getUser = `${serverIP}/users/user?document=`;
 const createUserURL = listUsers;
 const updateUser = `${serverIP}/users/`;
 const csvUpload = `${serverIP}/users-csv`;
+const usersByRol = `${serverIP}/users-rol?rol=`;
 
 module.exports = {
   getUsersList,
@@ -30,4 +31,5 @@ module.exports = {
   updateUser,
   csvUpload,
   examsByPatientURL,
+  usersByRol,
 };

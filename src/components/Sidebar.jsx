@@ -8,6 +8,7 @@ import '../assets/styles/sass/components/_sidebar.scss';
 import logo from '../assets/img/logo.png';
 import profilePicture from '../assets/img/user-profile.png';
 import routes from '../routes/index';
+import { persistor } from '../store';
 
 const Sidebar = (props) => {
   const { role } = props.user;
@@ -18,6 +19,11 @@ const Sidebar = (props) => {
   function isCurrentRoute(route) {
     return props.location.pathname === route ? '--active' : '';
   }
+
+  const logout = (event) => {
+    persistor.purge();
+  };
+
   return (
     <section className={`sidebar ${props.sidebar.open && 'open'}`}>
       <div className='sidebar__brand'>
@@ -44,7 +50,9 @@ const Sidebar = (props) => {
           })}
           <li className='sidebar__menu-item'>
             <i className='fa fa-sign-out' />
-            <a href='/'>Logout</a>
+            <a href='/' onClick={logout}>
+              Logout
+            </a>
           </li>
         </ol>
       </section>
