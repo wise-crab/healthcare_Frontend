@@ -1,4 +1,9 @@
-import { GET_USERS, CSV_UPLOAD, UPDATE_USER } from '../types/adminTypes';
+import {
+  GET_USERS,
+  CSV_UPLOAD,
+  UPDATE_USER,
+  ADD_USER,
+} from '../types/adminTypes';
 
 const INITIAL_STATE = {
   users: [],
@@ -6,6 +11,8 @@ const INITIAL_STATE = {
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
+    case ADD_USER:
+      break;
     case GET_USERS:
       return INITIAL_STATE;
     case CSV_UPLOAD:

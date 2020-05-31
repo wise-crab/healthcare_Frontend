@@ -1,43 +1,23 @@
-import React, { useState } from 'react';
-import { withRouter } from 'react-router-dom';
-import '../../assets/styles/sass/components/_search.scss';
-import '../../assets/styles/sass/components/_table.scss';
+import React from 'react';
+import '../assets/styles/sass/components/_table.scss';
 
-const Bacteriologist = ({ children, history }) => {
-  const [form, setForm] = useState({
-    search: '',
-  });
-
-  const updateInput = (event) => {
-    setForm({
-      ...form,
-      [event.target.name]: event.target.value,
-    });
-  };
-
+const BacteriologistExamsByPatient = () => {
   return (
     <>
-      <h1>Búsqueda de pacientes</h1>
-      <form className='search card' id='search-component'>
-        <input
-          name='search'
-          type='text'
-          onChange={updateInput}
-          className='input'
-        />
-        <button className='button--icon' type='submit'>
-          <i className='fa fa-search' />
-        </button>
-      </form>
+      <h1>Lista de exámenes</h1>
+      <div className='card'>
+        <h4>Nombre del paciente</h4>
+        <p>Documento del paciente</p>
+      </div>
 
       <div className='bacteriologist-exams card' style={{ marginTop: 24 }}>
-        <h4>Lista de pacientes</h4>
+        <h4>Lista de exámenes</h4>
         <br />
         <div className='table-responsive'>
           <table className='table table-striped'>
             <thead>
               <tr>
-                <th>Tipo de examen</th>
+                <th>Patología</th>
                 <th>Fecha de orden</th>
                 <th>Fecha de examen</th>
                 <th>Número de orden</th>
@@ -50,21 +30,35 @@ const Bacteriologist = ({ children, history }) => {
                 <td>Fecha de orden</td>
                 <td>Fecha de examen</td>
                 <td>Número de orden</td>
-                <td>Acción</td>
+                <td>Subir Resultado</td>
               </tr>
               <tr>
                 <td>Tipo de examen</td>
                 <td>Fecha de orden</td>
                 <td>Fecha de examen</td>
                 <td>Número de orden</td>
-                <td>Acción</td>
+                <td>Subir Resultado</td>
               </tr>
               <tr>
                 <td>Tipo de examen</td>
                 <td>Fecha de orden</td>
                 <td>Fecha de examen</td>
                 <td>Número de orden</td>
-                <td>Acción</td>
+                <td>Subir Resultado</td>
+              </tr>
+              <tr>
+                <td>Tipo de examen</td>
+                <td>Fecha de orden</td>
+                <td>Fecha de examen</td>
+                <td>Número de orden</td>
+                <td>Subir Resultado</td>
+              </tr>
+              <tr>
+                <td>Tipo de examen</td>
+                <td>Fecha de orden</td>
+                <td>Fecha de examen</td>
+                <td>Número de orden</td>
+                <td>Subir Resultado</td>
               </tr>
             </tbody>
           </table>
@@ -74,4 +68,4 @@ const Bacteriologist = ({ children, history }) => {
   );
 };
 
-export default withRouter(Bacteriologist);
+export default BacteriologistExamsByPatient;

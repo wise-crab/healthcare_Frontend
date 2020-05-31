@@ -12,6 +12,8 @@ import CreateUser from '../views/CreateUser';
 import BulkData from '../views/BulkData';
 import NotFound from '../views/NotFound';
 import UpdateUser from './UpdateUser';
+import BacteriologistExamsByPatient from '../views/BacteriologistExamsByPatient';
+import AssignExamResult from '../views/AssignExamResult';
 
 const App = () => {
   return (
@@ -20,12 +22,22 @@ const App = () => {
         <Switch>
           <Route exact path='/' component={Login} />
           <ProtectedRoute exact path='/admin' component={Admin} />
-          <ProtectedRoute exact path='/medic' component={Doctor} />
+          <ProtectedRoute exact path='/doctor' component={Doctor} />
           <ProtectedRoute exact path='/patient' component={Patient} />
           <ProtectedRoute
             exact
             path='/bacteriologist'
             component={Bacteriologist}
+          />
+          <ProtectedRoute
+            exact
+            path='/bacteriologist/patient-exams'
+            component={BacteriologistExamsByPatient}
+          />
+          <ProtectedRoute
+            exact
+            path='/bacteriologist/assign-results'
+            component={AssignExamResult}
           />
           <ProtectedRoute exact path='/profile' component={Profile} />
           <ProtectedRoute exact path='/create-user' component={CreateUser} />

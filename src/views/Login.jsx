@@ -1,14 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import logo from '../assets/img/Brand-icon-horizontal.png';
 import { loginUser } from '../actions/authActions';
 import '../assets/styles/sass/views/__login.scss';
 
 const Login = (props) => {
-  useEffect(() => {
-    props.user.role !== null && props.history.push(`/${props.user.role}`);
-  });
-
   const [form, setValues] = useState({
     username: '',
     role: '',
@@ -60,9 +57,6 @@ const Login = (props) => {
                 <input type='checkbox' id='cbox1' value='first_checkbox' />
                 Remember me
               </label>
-              <a href='/' id='forgot'>
-                Forgot password
-              </a>
             </div>
             <button className='button' type='submit'>
               Login
@@ -76,6 +70,10 @@ const Login = (props) => {
 
 const mapDispatchToProps = {
   loginUser,
+};
+
+Login.propTypes = {
+  loginUser: PropTypes.func,
 };
 
 const mapStateToProps = (state) => {
