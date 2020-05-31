@@ -7,6 +7,7 @@ import {
   GET_EXAMS_BY_PATIENT,
 } from '../types/doctorTypes';
 import { ERROR, LOADING } from '../types/asyncTypes';
+import { getUser } from '../APIS/apis';
 
 export const getExamsByPatient = (id) => {
   return async (dispatch) => {

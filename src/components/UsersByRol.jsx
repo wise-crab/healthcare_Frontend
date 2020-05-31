@@ -6,7 +6,7 @@ import { searchByrol } from '../actions/adminActions';
 
 const UsersByrol = (props) => {
   const { users } = props;
-  let dataUser = [];
+  const dataUser = [];
   const [form, setValues] = useState({
     rol: '',
   });
@@ -16,7 +16,6 @@ const UsersByrol = (props) => {
       ...form,
       [event.target.name]: event.target.value,
     });
-    dataUser = [];
   };
 
   const handleSubmit = (event) => {
