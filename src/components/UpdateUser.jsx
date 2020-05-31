@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 import '../assets/styles/sass/views/_profile.scss';
 import { updateUsers } from '../actions/adminActions';
 
 const UpdateUser = (props) => {
-
+  const { data } = props;
   const [form, setValues] = useState({
     id: '',
     numberId: '',
@@ -12,22 +12,22 @@ const UpdateUser = (props) => {
     lastName: '',
     email: '',
     contactNumber: '',
-    rol: ''
-  })
+    rol: '',
+  });
 
   const updateInput = (event) => {
     setValues({
       ...form,
       [event.target.name]: event.target.value,
-    })
-  }
-  
+    });
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    props.updateUsers({ id: form.id }, form)
-  }
-  
-  const response = props.data.data
+    props.updateUsers({ id: form.id }, form);
+  };
+
+  const response = data.data;
 
   return (
     <>
@@ -36,11 +36,11 @@ const UpdateUser = (props) => {
         <h4 className='create-user-form__title'>
           Formulario de modificación de usuario
         </h4>
-        <form action="" onSubmit={handleSubmit}>
+        <form action='' onSubmit={handleSubmit}>
           <div className='create-user-form__row'>
             <div className='create-user-form__form-group'>
               <label htmlFor='id'>Id</label>
-              <input 
+              <input
                 type='text'
                 name='id'
                 id='id'
@@ -52,7 +52,7 @@ const UpdateUser = (props) => {
           <div className='create-user-form__row'>
             <div className='create-user-form__form-group'>
               <label htmlFor='name'>Nombre</label>
-              <input 
+              <input
                 type='text'
                 name='name'
                 id='name'
@@ -109,7 +109,7 @@ const UpdateUser = (props) => {
             <div className='create-user-form__form-group'>
               <label htmlFor='rol'>Rol de usuario</label>
               <select name='rol' id='rol' onChange={updateInput}>
-                <option>...</option>                
+                <option>...</option>
                 <option value='patient'>Patient</option>
                 <option value='doctor'>Doctor</option>
                 <option value='bacteriologist'>Bacteriologist</option>
@@ -117,14 +117,14 @@ const UpdateUser = (props) => {
               </select>
             </div>
           </div>
-          <button className='button' type='submit'>Guardar</button>
-          {
-            response !== undefined ?
+          <button className='button' type='submit'>
+            Guardar
+          </button>
+          {response !== undefined ? (
             <div className='create-user-form__form-group'>
               <h3>usuario modificado</h3>
-            </div> :
-            null
-          }
+            </div>
+          ) : null}
         </form>
       </section>
     </>
@@ -134,11 +134,11 @@ const UpdateUser = (props) => {
 const mapStateToProps = (state) => {
   return {
     data: state.adminReducer,
-  }
-}
+  };
+};
 
 const mapDispatchToProps = {
   updateUsers,
 };
 
-export default connect (mapStateToProps, mapDispatchToProps)(UpdateUser);
+export default connect(mapStateToProps, mapDispatchToProps)(UpdateUser);

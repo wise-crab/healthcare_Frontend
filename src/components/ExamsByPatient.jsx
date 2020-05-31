@@ -20,7 +20,7 @@ const ExamsByPacient = (props) => {
       <button
         className='button--icon'
         type='button'
-        onClick={getPatientExams(idx)}
+        onClick={() => getPatientExams(idx)}
       />
       {data !== null ? <div>{data.nombre}</div> : null}
     </div>

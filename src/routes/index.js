@@ -13,8 +13,9 @@ const routes = {
   ],
   admin: [
     { path: '/admin', name: 'Home', icon: 'fa fa-home' },
-    { path: '#', name: 'Users', icon: 'fa fa-home' },
-    { path: '#', name: 'Create User', icon: 'fa fa-home' },
+    { path: '/users-rol', name: 'Users', icon: 'fa fa-home' },
+    { path: '/search', name: 'User', icon: 'fa fa-home' },
+    { path: '/create-user', name: 'Create User', icon: 'fa fa-home' },
     { path: '/bulk-data', name: 'Bulky Upload', icon: 'fa fa-home' },
     { path: '/update-user', name: 'Update user', icon: 'fa fa-home' },
   ],
