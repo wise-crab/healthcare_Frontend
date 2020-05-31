@@ -13,9 +13,11 @@ export const uploadUsers = (data, history) => {
     dispatch({
       type: CSV_UPLOAD,
     });
-    console.log(data);
+
     const URL = `${csvUpload}`;
     try {
+      const token = getCookie('token');
+      axios.defaults.headers.common = { Authorization: `Bearer ${token}` };
       await axios.post(URL, data);
       dispatch({
         type: CSV_UPLOAD_SUCESS,
