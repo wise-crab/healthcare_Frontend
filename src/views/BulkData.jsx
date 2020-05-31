@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import Dropzone from 'react-dropzone';
 import csv from 'csv';
-import uploadUsers from '../actions/adminActions';
+import { uploadUsers } from '../actions/adminActions';
 import DynamicTable from '../components/DynamicTable';
 
 function BulkData(props) {
