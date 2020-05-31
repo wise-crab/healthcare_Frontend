@@ -19,7 +19,7 @@ const App = () => {
         <Switch>
           <Route exact path='/' component={Login} />
           <ProtectedRoute exact path='/admin' component={Admin} />
-          <ProtectedRoute exact path='/medic' component={Doctor} />
+          <ProtectedRoute exact path='/doctor' component={Doctor} />
           <ProtectedRoute exact path='/patient' component={Patient} />
           <ProtectedRoute
             exact

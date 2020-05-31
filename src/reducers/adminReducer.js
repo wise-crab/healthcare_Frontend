@@ -1,4 +1,4 @@
-import { GET_USERS } from '../types/adminTypes';
+import { ADD_USER } from '../types/adminTypes';
 
 const INITIAL_STATE = {
   users: [],
@@ -6,9 +6,9 @@ const INITIAL_STATE = {
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case GET_USERS:
-      return INITIAL_STATE;
-
+    case ADD_USER:
+      break;
+  
     default:
       return state;
   }
