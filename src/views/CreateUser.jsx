@@ -5,7 +5,7 @@ import '../assets/styles/sass/views/_createUser.scss';
 import { addUser } from '../actions/adminActions'
 
 const CreateUser = (props) => {
-  const [form,setValues] = useState({
+  const [form, setValues] = useState({
     name: '',
     last_name: '',
     email: '',
