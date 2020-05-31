@@ -1,7 +1,7 @@
 import { SEARCH_PATIENT, GET_EXAMS_BY_PATIENT } from '../types/doctorTypes';
 
 const INITIAL_STATE = {
-  data: {},
+  patient: {},
 };
 
 export default (state = INITIAL_STATE, action) => {
