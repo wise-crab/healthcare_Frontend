@@ -5,9 +5,9 @@
   "main": "./src/index.js",
   "scripts": {
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --mode development --open --host 0.0.0.0",
+    "start": "webpack-dev-server --mode development --open",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "json-server --watch --host 0.0.0.0 api.json",
+    "server": "json-server --watch api.json",
     "lint": "eslint ./src/ --ext .js --ext .jsx --fix",
     "format": "prettier --write {*.js,src/**/*.{js,jsx}}"
   },

@@ -1,5 +1,5 @@
 // server Domain
-const serverIP = 'http://192.168.0.16:3000';
+const serverIP = 'http://localhost:3000';
 
 //Users
 const getUsersList = 'https://data-mock-278118.wl.r.appspot.com/api/users';

@@ -94,6 +94,7 @@ const CreateUser = (props) => {
             <div className='create-user-form__form-group'>
               <label htmlFor='role'>Rol de usuario</label>
               <select name='role' id='role' onChange={updateInput}>
+                <option value=''>Select a role</option>
                 <option value='patient'>Patient</option>
                 <option value='doctor'>Doctor</option>
                 <option value='bacteriologist'>Bacteriologist</option>
