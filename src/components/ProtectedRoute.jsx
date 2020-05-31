@@ -41,7 +41,7 @@ const ProtectedRoute = ({ component: Component, ...rest }) => {
 
 const mapStateToProps = (state) => {
   return {
-    user: state.loginReducer,
+    user: state.authReducer,
   };
 };
 

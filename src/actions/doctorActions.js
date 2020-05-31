@@ -1,7 +1,11 @@
 import axios from 'axios';
-import { getUser, examsByPatientURL } from '../APIS/apis';
 import getCookie from '../functions/getCookie';
-import { SEARCH_PATIENT, GET_EXAMS_BY_PATIENT } from '../types/doctorTypes';
+import {
+  // eslint-disable-next-line no-unused-vars
+  ADD_EXAM,
+  SEARCH_PATIENT,
+  GET_EXAMS_BY_PATIENT,
+} from '../types/doctorTypes';
 import { ERROR, LOADING } from '../types/asyncTypes';
 
 export const getExamsByPatient = (id) => {

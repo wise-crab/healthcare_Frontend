@@ -13,7 +13,6 @@ const ExamsByPacient = (props) => {
     props.getExamsByPatient(id);
   };
   const data = props.exams.exmas || null;
-  console.log(data);
 
   return (
     <div>

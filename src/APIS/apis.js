@@ -14,7 +14,7 @@ const patientsList = `${serverIP}/users-rol?rol=patient`;
 const loginURL = `${serverIP}/login`;
 const listUsers = `${serverIP}/users`;
 const getUser = `${serverIP}/users/user?document=`;
-const createUser = listUsers;
+const createUserURL = listUsers;
 const updateUser = `${serverIP}/users/`;
 const csvUpload = `${serverIP}/users-csv`;
 const usersByRol = `${serverIP}/users-rol?rol=`;
@@ -27,7 +27,7 @@ module.exports = {
   patientsList,
   loginURL,
   getUser,
-  createUser,
+  createUserURL,
   updateUser,
   csvUpload,
   examsByPatientURL,
