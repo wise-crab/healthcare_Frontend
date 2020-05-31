@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable jsx-a11y/img-redundant-alt */
 /* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/no-array-index-key */
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter, Link } from 'react-router-dom';
@@ -11,17 +11,13 @@ import routes from '../routes/index';
 
 const Sidebar = (props) => {
   const { role } = props.user;
-
   if (role == null) {
     return '';
   }
-
   const options = routes[role];
-
   function isCurrentRoute(route) {
     return props.location.pathname === route ? '--active' : '';
   }
-
   return (
     <section className={`sidebar ${props.sidebar.open && 'open'}`}>
       <div className='sidebar__brand'>
@@ -30,13 +26,14 @@ const Sidebar = (props) => {
       </div>
       <section className='sidebar__nav'>
         <div className='sidebar__profile'>
-          <img src={profilePicture} alt={`Baz taking a ${profilePicture}`} />
-          <div>{`${props.user.name} ${props.user.lastName}`}</div>
+          <img src={profilePicture} alt='profile picture' />
+          <div>{`${props.user.name}  ${props.user.lastName}`}</div>
         </div>
         <ol className='sidebar__menu'>
           {options.map((option, idx) => {
             return (
               <li
+                // eslint-disable-next-line react/no-array-index-key
                 key={idx}
                 className={`sidebar__menu-item${isCurrentRoute(option.path)}`}
               >
@@ -47,19 +44,17 @@ const Sidebar = (props) => {
           })}
           <li className='sidebar__menu-item'>
             <i className='fa fa-sign-out' />
-            <a href='/'>Salir</a>
+            <a href='/'>Logout</a>
           </li>
         </ol>
       </section>
     </section>
   );
 };
-
 const mapStateToProps = (state) => {
   return {
-    user: state.loginReducer,
+    user: state.authReducer,
     sidebar: state.sidebar,
   };
 };
-
 export default withRouter(connect(mapStateToProps, null)(Sidebar));
