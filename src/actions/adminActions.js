@@ -16,7 +16,7 @@ import { csvUpload, updateUser, createUserURL } from '../APIS/apis';
 import getCookie from '../functions/getCookie';
 
 export const addUser = (form) => {
-  const { name, lastName: last_name, email, cdi, phone, role } = form;
+  const { name, last_name: lastName, email, cdi, phone, role } = form;
   return async (dispatch) => {
     dispatch({
       type: LOADING,
@@ -26,16 +26,17 @@ export const addUser = (form) => {
     const data = {
       numberId: cdi,
       name,
-      lastName: last_name,
+      lastName,
       email,
       contactNumber: phone,
       rol: role,
     };
     try {
       const res = await axios.post(createUserURL, data);
+      alert(res.data.data);
       dispatch({
         type: ADD_USER,
-        payload: res.data.data,
+        payload: res.data,
       });
     } catch (err) {
       dispatch({
