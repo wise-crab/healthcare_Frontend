@@ -1,27 +1,60 @@
-import React, { useState, useEffect } from 'react';
+/* eslint-disable react/destructuring-assignment */
+import React from 'react';
+import { connect } from 'react-redux';
+import getExamsByPatient from '../../fetchs/patienstFetch';
 import Table from '../../components/Table';
 
-const Patient = () => {
-  const [state, setState] = useState({ isReady: false, data: [] });
-  useEffect(() => {
-    fetch('https://data-mock-278118.wl.r.appspot.com/api/exams')
-      .then((response) => response.json())
-      .then((data) => {
-        setState({ isReady: true, data: data.data });
-      })
-      .catch((error) => console.error(error));
-  }, []);
-
-  if (!state.isReady) {
-    return 'Loading';
+class Patient extends React.Component {
+  componentDidMount() {
+    const { id } = this.props;
+    this.props.getExamsByPatient(id);
   }
-  return (
-    <>
-      <h1>Title</h1>
-      <section className='card'>
-        <Table data={state.data} />
-      </section>
-    </>
-  );
+
+  render() {
+    const { error, pending, exams } = this.props;
+    console.log({ error, pending, exams });
+    if (error) {
+      return (
+        <div>
+          Error!
+          {error.message}
+        </div>
+      );
+    }
+
+    if (pending) {
+      return <h1>Cargando datos...</h1>;
+    }
+
+    if (exams.length > 0) {
+      return (
+        <>
+          <h1>Examenes del usuario</h1>
+          <section className='card'>
+            <Table data={exams} />
+          </section>
+        </>
+      );
+    }
+    return (
+      <>
+        <h1>Sin examenes cargados</h1>
+      </>
+    );
+  }
+}
+
+const mapStateToProps = (state) => {
+  return {
+    exams: state.patientReducer.exams,
+    pending: state.patientReducer.pending,
+    error: state.patientReducer.error,
+    id: state.authReducer.id,
+  };
 };
-export default Patient;
+
+const mapDispatchToProps = {
+  getExamsByPatient,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Patient);
