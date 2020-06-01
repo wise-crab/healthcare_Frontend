@@ -77,6 +77,7 @@
       2,
       "^(err|error|anySpecificError)$"
     ],
+    "import/prefer-default-export": "off",
     "indent": [
       2,
       2,

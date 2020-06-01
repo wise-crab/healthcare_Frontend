@@ -1,13 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { getPendingExamsByPatientId } from '../actions/bateriologistActions';
 import '../assets/styles/sass/components/_table.scss';
 
-const BacteriologistExamsByPatient = () => {
+const BacteriologistExamsByPatient = (props) => {
+  const [state, setState] = useState({
+    currentPatient: {},
+    exams: [],
+  });
+
+  useEffect(() => {
+    getPendingExamsByPatientId(props.location.state.currentPatient._id).then(
+      (response) => {
+        setState({
+          currentPatient: props.location.state.currentPatient,
+          exams: response,
+        });
+      },
+    );
+  }, []);
+
   return (
     <>
       <h1>Lista de exámenes</h1>
       <div className='card'>
-        <h4>Nombre del paciente</h4>
-        <p>Documento del paciente</p>
+        <h4>
+          {`${state.currentPatient.name} ${state.currentPatient.lastName}`}
+        </h4>
+        <p>
+          Documento:
+          {state.currentPatient.numberId}
+        </p>
       </div>
 
       <div className='bacteriologist-exams card' style={{ marginTop: 24 }}>
@@ -25,41 +48,26 @@ const BacteriologistExamsByPatient = () => {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Tipo de examen</td>
-                <td>Fecha de orden</td>
-                <td>Fecha de examen</td>
-                <td>Número de orden</td>
-                <td>Subir Resultado</td>
-              </tr>
-              <tr>
-                <td>Tipo de examen</td>
-                <td>Fecha de orden</td>
-                <td>Fecha de examen</td>
-                <td>Número de orden</td>
-                <td>Subir Resultado</td>
-              </tr>
-              <tr>
-                <td>Tipo de examen</td>
-                <td>Fecha de orden</td>
-                <td>Fecha de examen</td>
-                <td>Número de orden</td>
-                <td>Subir Resultado</td>
-              </tr>
-              <tr>
-                <td>Tipo de examen</td>
-                <td>Fecha de orden</td>
-                <td>Fecha de examen</td>
-                <td>Número de orden</td>
-                <td>Subir Resultado</td>
-              </tr>
-              <tr>
-                <td>Tipo de examen</td>
-                <td>Fecha de orden</td>
-                <td>Fecha de examen</td>
-                <td>Número de orden</td>
-                <td>Subir Resultado</td>
-              </tr>
+              {state.exams.map((exam) => {
+                return (
+                  <tr key={exam._id}>
+                    <td>{exam.typeOfExam}</td>
+                    <td>{exam.registrationDate}</td>
+                    <td>{exam.registrationDate}</td>
+                    <td>{exam._id}</td>
+                    <td>
+                      <Link
+                        to={{
+                          pathname: '/bacteriologist/assign-results',
+                          state: state.currentPatient,
+                        }}
+                      >
+                        Subir resultado
+                      </Link>
+                    </td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>

@@ -12,7 +12,7 @@ const AssignExamResult = () => {
       <div className='card' style={{ marginTop: 24 }}>
         <h4>Asignación de resultados </h4>
         <br />
-        <p>datos del examen aqui</p>
+        <p>datos del examen aquí</p>
         <form onSubmit={(event) => event.preventDefault()}>
           <div className='form-group'>
             <input type='file' name='' id='' />
