@@ -43,10 +43,9 @@ export const getPatient = ({ id }) => {
     const URL = `${getUser}${id}`;
     const token = getCookie('token');
     axios.defaults.headers.common = { Authorization: `Bearer ${token}` };
+    debugger;
     try {
-      const res = await axios.get(URL, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      const res = await axios.get(URL);
       dispatch({
         type: SEARCH_PATIENT,
         payload: res.data.data,

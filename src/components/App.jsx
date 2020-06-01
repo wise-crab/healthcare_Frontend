@@ -15,6 +15,7 @@ import UpdateUser from './UpdateUser';
 import Search from './Search';
 import UsersByRol from './UsersByRol';
 import BacteriologistExamsByPatient from '../views/BacteriologistExamsByPatient';
+import patientContactInfo from '../views/patientContactInfo';
 import AssignExamResult from '../views/AssignExamResult';
 
 const App = () => {
@@ -35,6 +36,11 @@ const App = () => {
             exact
             path='/bacteriologist/patient-exams'
             component={BacteriologistExamsByPatient}
+          />
+          <ProtectedRoute
+            exact
+            path='/doctor/patientInfo'
+            component={patientContactInfo}
           />
           <ProtectedRoute
             exact
