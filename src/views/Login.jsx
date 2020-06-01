@@ -1,14 +1,18 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import logo from '../assets/img/Brand-icon-horizontal.png';
 import { loginUser } from '../actions/authActions';
 import '../assets/styles/sass/views/__login.scss';
+import routes from '../routes';
 
 const Login = (props) => {
+  useEffect(() => {
+    props.user.role !== null && props.history.push(`/${props.user.role}`);
+  });
+
   const [form, setValues] = useState({
     username: '',
-    role: '',
+    password: '',
   });
 
   const updateInput = (event) => {
@@ -72,13 +76,9 @@ const mapDispatchToProps = {
   loginUser,
 };
 
-Login.propTypes = {
-  loginUser: PropTypes.func,
-};
-
 const mapStateToProps = (state) => {
   return {
-    user: state.loginReducer,
+    user: state.authReducer,
   };
 };
 
