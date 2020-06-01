@@ -21,6 +21,8 @@ const Sidebar = (props) => {
   }
 
   const logout = (event) => {
+    document.cookie = 'token=';
+    document.cookie = 'role=';
     persistor.purge();
   };
 
