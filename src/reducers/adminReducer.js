@@ -10,6 +10,7 @@ const INITIAL_STATE = {
   users: [],
 };
 
+// eslint-disable-next-line consistent-return
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case ADD_USER:

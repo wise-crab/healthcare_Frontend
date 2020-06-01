@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { getPendingExamsByPatientId } from '../actions/bateriologistActions';
 import '../assets/styles/sass/components/_table.scss';
 
@@ -54,7 +55,16 @@ const BacteriologistExamsByPatient = (props) => {
                     <td>{exam.registrationDate}</td>
                     <td>{exam.registrationDate}</td>
                     <td>{exam._id}</td>
-                    <td>subir resultado</td>
+                    <td>
+                      <Link
+                        to={{
+                          pathname: '/bacteriologist/assign-results',
+                          state: state.currentPatient,
+                        }}
+                      >
+                        Subir resultado
+                      </Link>
+                    </td>
                   </tr>
                 );
               })}
