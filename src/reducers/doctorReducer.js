@@ -14,7 +14,7 @@ export default (state = INITIAL_STATE, action) => {
     case GET_EXAMS_BY_PATIENT:
       return {
         ...state,
-        exmas: action.payload,
+        exams: action.payload,
       };
     default:
       return state;

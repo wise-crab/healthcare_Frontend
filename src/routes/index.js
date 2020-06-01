@@ -4,7 +4,7 @@ const routes = {
     { path: '#', name: 'Exams Results', icon: 'fa fa-tv' },
   ],
   doctor: [
-    { path: '/doctor', name: 'Home', icon: 'fa fa-home' },
+    { path: '/doctor', name: 'Home', icon: 'fa fa-home', render: true },
     { path: '#', name: 'Patient List', icon: 'fa fa-home' },
   ],
   bacteriologist: [
