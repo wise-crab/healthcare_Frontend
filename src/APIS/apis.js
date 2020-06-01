@@ -19,6 +19,7 @@ const updateUser = `${serverIP}/users/`;
 const csvUpload = `${serverIP}/users-csv`;
 const usersByRol = `${serverIP}/users-rol?rol=`;
 const getExamsByPatientId = `${serverIP}/exams-query?user=patient&id=`;
+const getExamsById = `${serverIP}/exams-query?user=patient&id=`;
 
 module.exports = {
   getUsersList,
@@ -34,4 +35,5 @@ module.exports = {
   examsByPatientURL,
   usersByRol,
   getExamsByPatientId,
+  getExamsById,
 };
