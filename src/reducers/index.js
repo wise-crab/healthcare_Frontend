@@ -1,9 +1,16 @@
 import { combineReducers } from 'redux';
-import patientsReducer from './patientsReducer';
-import loginReducer from './loginReducer';
-import examsReducer from './examsReducer'
+import authReducer from './authReducer';
+import patientReducer from './patientReducer';
+import bacteriologistReducer from './bacteriologistReducer';
+import adminReducer from './adminReducer';
+import doctorReducer from './doctorReducer';
+import sidebar from './sidebar';
 
 export default combineReducers({
-  patientsReducer,
-  loginReducer
+  patientReducer,
+  authReducer,
+  adminReducer,
+  doctorReducer,
+  bacteriologistReducer,
+  sidebar,
 });

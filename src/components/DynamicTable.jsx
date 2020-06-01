@@ -1,4 +1,9 @@
-import React from "react";
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/no-array-index-key */
+
+import React from 'react';
+import '../assets/styles/sass/components/_table.scss';
+import '../assets/styles/sass/components/_stepProgress.scss';
 
 export default class DynamicTable extends React.Component {
   constructor(props) {
@@ -13,27 +18,28 @@ export default class DynamicTable extends React.Component {
   };
 
   getHeader = () => {
-    var keys = this.getKeys();
+    const keys = this.getKeys();
     return keys.map((key, index) => {
       return <th key={key}>{key.toUpperCase()}</th>;
     });
   };
 
   getRowsData = () => {
-    var items = this.props.data;
-    var keys = this.getKeys();
+    const items = this.props.data;
+    const keys = this.getKeys();
     return items.map((row, index) => {
       return (
-        <tr key={index}>
+        <tr key={`${index}t`}>
           <RenderRow key={index} data={row} keys={keys} />
         </tr>
       );
     });
   };
+
   render() {
     return (
-      <div>
-        <table>
+      <div className='table-responsive'>
+        <table className='table table-striped'>
           <thead>
             <tr>{this.getHeader()}</tr>
           </thead>

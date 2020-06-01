@@ -5,7 +5,7 @@ const getData = async (url) => {
     initialState = await data.json();
   } catch (err) {
     console.error(err);
-  }  
+  }
   return initialState;
 };
 
